@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso8859-1"?>
+<acercanosotros>
+    <mensaje>
+        <personaNombre>Juan</personaNombre>
+        <personaApellido>Perez Perez</personaApellido>
+        <urlfoto>https://lh4.googleusercontent.com/-uzFOs2acOBA/AAAAAAAAAAI/AAAAAAAAACE/cweKV7Ug9hY/photo.jpg</urlfoto>
+        <mensajePersona>The first place that I can well remember was a large pleasant meadow with a pond of clear water in it. Some shady trees leaned over it, and rushes and water-lilies grew at the deep end. Over the hedge on one side we looked into a plowed field, and on the other we looked over a gate at our master's house, which stood by the roadside; at the top of the meadow was a grove of fir trees, and at the bottom a running brook overhung by a steep bank. </mensajePersona>
+        <latitud>20.127858</latitud>
+        <longitud>-98.731540</longitud>
+    </mensaje>
+    <mensaje>
+        <personaNombre>Luis</personaNombre>
+        <personaApellido>Perez Perez</personaApellido>
+        <urlfoto>https://lh4.googleusercontent.com/-uzFOs2acOBA/AAAAAAAAAAI/AAAAAAAAACE/cweKV7Ug9hY/photo.jpg</urlfoto>
+        <mensajePersona>Planchet, d'Artagnan's valet, supported his good fortune nobly. He received thirty sous per day, and for a month he returned to his lodgings gay as a chaffinch, and affable toward his master. When the wind of adversity began to blow upon the housekeeping of the Rue des Fossoyeurs—that is to say, when the forty pistoles of King Louis XIII were consumed or nearly so—he commenced complaints which Athos thought nauseous, Porthos indecent, and Aramis ridiculous. Athos counseled d'Artagnan to dismiss the fellow; Porthos was of opinion that he should give him a good thrashing first; and Aramis contended that a master should never attend to anything but the civilities paid to him.
+            "This is all very easy for you to say," replied d'Artagnan, "for you, Athos, who live like a dumb man with Grimaud, who forbid him to speak, and consequently never exchange ill words with him; for you, Porthos, who carry matters in such a magnificent style, and are a god to your valet, Mousqueton; and for you, Aramis, who, always abstracted by your theological studies, inspire your servant, Bazin, a mild, religious man, with a profound respect; but for me, who am without any settled</mensajePersona>
+        <latitud>20.023652</latitud>
+        <longitud>-98.810039</longitud>
+    </mensaje>
+    <mensaje>
+        <personaNombre>Pedro</personaNombre>
+        <personaApellido>Perez Perez</personaApellido>
+        <urlfoto>https://lh4.googleusercontent.com/-uzFOs2acOBA/AAAAAAAAAAI/AAAAAAAAACE/cweKV7Ug9hY/photo.jpg</urlfoto>
+        <mensajePersona>Mr Phileas Fogg lived, in 1872, at No. 7, Saville Row, Burlington Gardens, the house in which Sheridan died in 1814. He was one of the most noticeable members of the Reform Club, though he seemed always to avoid attracting attention; an enigmatical personage, about whom little was known, except that he was a polished man of the world. People said that he resembled Byron, - at least that his head was Byronic; but he was a bearded, tranquil Byron, who might live on a thousand years without growing old.</mensajePersona>
+        <latitud>20.023652</latitud>
+        <longitud>-98.810039</longitud>
+    </mensaje>
+    <urlOrga>http://www.grupotecopy.es/documentacion-corporativa/organigramas/organigrama_cotesa.png</urlOrga>
+    <galeria>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+        <imagen>
+            <urlImagen>https://lh5.googleusercontent.com/-kolkdiZzFEk/AAAAAAAAAAI/AAAAAAAAAAA/2Rs4BY66N0g/photo.jpg</urlImagen>
+            <titulo>lkdfjdlkj</titulo>
+        </imagen>
+    </galeria>
+</acercanosotros>
