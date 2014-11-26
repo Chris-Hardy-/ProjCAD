@@ -54,6 +54,7 @@
     self.ButtonSecretaria.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
     self.ButtonOrganigrama.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
     self.titleRedes.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.titleMensajes.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
     
     
     

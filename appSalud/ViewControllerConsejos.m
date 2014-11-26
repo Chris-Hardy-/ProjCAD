@@ -45,6 +45,12 @@
     
     //Llenado del pick view
     
+    //Change font
+    
+    [self.textFieldCuerpo setFont:[UIFont fontWithName:@"Antipasto" size:18.0]];
+    [self.myLabel setFont:[UIFont fontWithName:@"Antipasto" size:18.0]];
+    
+    
     userDefaults = [NSUserDefaults standardUserDefaults];
     auxConsejo = [[indice_consejo alloc] init];
     
@@ -54,8 +60,6 @@
     
     arrayData = [userDefaults objectForKey:@"arrayConsejosEstacionales"];
     arrayEstacionales = [NSKeyedUnarchiver unarchiveObjectWithData:arrayData];
-    
-    
     
     
     //NSArray *arrayNutricionales= [[NSArray alloc] initWithObjects:@"Indica1",@"Indica2",@"Indica3", nil];
@@ -87,6 +91,26 @@
     self.textFieldCuerpo.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     
 }
+
+
+//Cambio de font myPicker
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel* tView = (UILabel*)view;
+    if (!tView)
+    {
+        tView = [[UILabel alloc] init];
+        [tView setFont: [UIFont fontWithName:@"Antipasto" size:18.0]];
+        //[tView setTextAlignment:UITextAlignmentLeft];
+    }
+    // Fill the label text here
+    auxConsejo = [self.arrayConsejos objectAtIndex:row];
+    tView.textAlignment = NSTextAlignmentCenter;
+    tView.text=auxConsejo.titulo;
+    return tView;
+}
+
 
 //pragma mark Picker Data Source Methods
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

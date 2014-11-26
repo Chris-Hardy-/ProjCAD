@@ -40,6 +40,15 @@
 {
     [super viewDidLoad];
     // initialize table data Dulce =)
+    
+    
+    //Cambio de font
+    self.buttonNutricional.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.buttonEstacionales.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.titleConsejos.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.editBoton.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+
+    
     tableData = [[NSArray alloc] init];
     
     arrayIndices = [[NSArray alloc] init];
@@ -77,7 +86,6 @@
     self.TablaIndices.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     self.TablaNoticias.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     self.editBoton.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
-    
     
 }
 
@@ -137,6 +145,8 @@
         tempIndicador = [arrayIndices objectAtIndex:indexPath.row];
         cell.textLabel.text = tempIndicador.titulo;
         cell.detailTextLabel.text = tempIndicador.texto;
+        cell.textLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f]; //change font
+        cell.detailTextLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
         return cell;
     }
     else if (tableView == self.TablaNoticias) {
@@ -144,11 +154,17 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NoticiasIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NoticiasIdentifier];
+            
         }
         tempNoticia = [arrayNoticias objectAtIndex:indexPath.row];
         
         cell.textLabel.text = tempNoticia.tituloNoticia;
+        
+        cell.textLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+        
         return cell;
+        
+        
     }
     
     UITableViewCell *cell;

@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *ButtonOrganigrama;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleRedes;
+@property (weak, nonatomic) IBOutlet UILabel *titleMensajes;
 
 @end

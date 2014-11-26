@@ -15,6 +15,7 @@
 
 
 @property (nonatomic) NSArray *arrayNoticia; //8 declaro global
+@property (weak, nonatomic) IBOutlet UIButton *buttonVerMasNoticia;
 
 
 @end

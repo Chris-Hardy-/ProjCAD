@@ -37,6 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //change font
+    
+    [self.tituloNoticia setFont:[UIFont fontWithName:@"Antipasto" size:18.0]];
+    [self.textFieldCuerpoNoticia setFont:[UIFont fontWithName:@"Antipasto" size:18.0]];
+    self.buttonVerMasNoticia.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
    
     self.title = @"Noticia Individual";
     
