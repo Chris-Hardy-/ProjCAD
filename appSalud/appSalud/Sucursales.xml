@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <sucursales>
     <sucursal>
-        <nombre>nombre</nombre>
-        <latitud>latitud</latitud>
-        <longitud>longitud</longitud>
-        <tipo>tipo</tipo>
-        <direccion>direccion</direccion>
-        <telefono>telefono</telefono>
-    </sucursal>
-    <sucursal>
         <nombre>ABRAHAM KANAN HUEBE</nombre>
         <latitud>20.117241</latitud>
         <longitud>-98.721565</longitud>

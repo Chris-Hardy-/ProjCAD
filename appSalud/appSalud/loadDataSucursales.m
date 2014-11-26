@@ -7,15 +7,16 @@
 //
 
 #import "loadDataSucursales.h"
+#import "CustomAnnotation.h"
 #import "sucursal.h"
-
 
 
 @interface loadDataSucursales () {
     NSXMLParser *parser;
     NSString *stringBuffer;
     NSString *stringTemp;
-    sucursal *tempSucursal;
+    CustomAnnotation *tempSucursal;
+//    sucursal *tempSucursal;
 }
 
 @end
@@ -36,7 +37,6 @@
     //    tempIndiceConsejo = [[indice_consejo alloc]init];
     
     self.arraySucursales = [[NSMutableArray alloc] init];
-    
     [self parseXML];
     
     
@@ -44,25 +44,24 @@
 
 - (void)parseXML{
     
-    NSString *xmlPath = [[NSBundle mainBundle] pathForResource:@"Surcursales" ofType:@"xml"];
-    NSData *xmlData = [NSData dataWithContentsOfFile:xmlPath];
-    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
-    parser = xmlParser;
-    [parser setDelegate:self];
+//    NSString *xmlPath = [[NSBundle mainBundle] pathForResource:@"Sucursales" ofType:@"xml"];
+//    NSData *xmlData = [NSData dataWithContentsOfFile:xmlPath];
+//    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
+//    parser = xmlParser;
+//    [parser setDelegate:self];
+//    
+//    stringTemp = [[NSString alloc] init];
+//    
+//    [parser parse];
     
+    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenUnidades.php";
+    NSURL *xmlURL = [NSURL URLWithString:path];
+    parser = [NSURL URLWithString:path ];
+    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+    parser.delegate = self;
     stringTemp = [[NSString alloc] init];
-    //parser.delegate = self;
-    
     [parser parse];
-    
-    
-    //    NSString *path = @"http://aqtiva.mx/olinia/prueba1.xml";
-    //
-    //    NSURL *xmlURL = [NSURL URLWithString:path ];
-    //    parser =
-    //    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
-    //    parser.delegate = self;
-    //    [parser parse];
+
 }
 
 #pragma mark - NSXMLParserDelegate
@@ -72,22 +71,18 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    if ([elementName isEqualToString:@"sucursales"]) {
+    if ([elementName isEqualToString:@"unidades"]) {
         self.arraySucursales = [[NSMutableArray alloc] init];
-        tempSucursal = [[sucursal alloc]init];
+        tempSucursal = [[CustomAnnotation alloc]init];
+//        tempSucursal = [[sucursal alloc]init];
     }
     
     else
         stringBuffer = [[NSString alloc] init];
     
-    //        else if ([elementName isEqualToString:@"idRuta"] || [elementName isEqualToString:@"precio"]  || [elementName isEqualToString:@"nombreRuta"] || [elementName isEqualToString:@"origen"] || [elementName isEqualToString:@"destino"] || [elementName isEqualToString:@"imageCromatica"] || [elementName isEqualToString:@"imageParada"] || [elementName isEqualToString:@"punto"] || [elementName isEqualToString:@"sentido"] || [elementName isEqualToString:@"idpunto"] || [elementName isEqualToString:@"latitud"] || [elementName isEqualToString:@"longitud"] || [elementName isEqualToString:@"nombre"]){
-    //            stringBuffer = [[NSMutableString alloc] init];
-    //        }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    
     
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
@@ -99,6 +94,8 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     if ([elementName isEqualToString:@"nombre"]) {
+        tempSucursal = [[CustomAnnotation alloc]init];
+//        tempSucursal = [[sucursal alloc]init];
         tempSucursal.nombre = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
@@ -110,11 +107,28 @@
     }
     else if ([elementName isEqualToString:@"longitud"]) {
         tempSucursal.longitud = [stringBuffer doubleValue];
+        CLLocationCoordinate2D sucLocation = CLLocationCoordinate2DMake(tempSucursal.latitud, tempSucursal.longitud);
+        [tempSucursal setCoordinate:sucLocation];
         stringTemp=@"";
         stringBuffer=@"";
-        
+    }
+    else if ([elementName isEqualToString:@"tipo"]) {
+        tempSucursal.tipo = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"direccion"]) {
+        tempSucursal.direccion = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"telefono"]) {
+        tempSucursal.telefono = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
         [self.arraySucursales addObject:tempSucursal];
-        tempSucursal = [[sucursal alloc] init];
+        tempSucursal = [[CustomAnnotation alloc] init];
+//        tempSucursal = [[sucursal alloc] init];
     }
 }
 

@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "CalloutMapAnnotation.h"
 
 
-@interface ViewControllerSucursales : UIViewController <MKMapViewDelegate>
+@interface ViewControllerSucursales : UIViewController <MKMapViewDelegate>{
+    //CalloutMapAnnotation *_calloutAnnotation;
+}
 
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapSurcursales;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) CLLocation* initialLocation;
+@property (nonatomic, retain) MKAnnotationView *selectedAnnotationView;
+
 
 @end
 

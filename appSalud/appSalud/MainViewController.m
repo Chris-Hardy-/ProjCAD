@@ -29,7 +29,6 @@
     [super viewDidLoad];
     userDefaults = [NSUserDefaults standardUserDefaults];
     
-    
     self.title = @"Acerca de Nosotros";
     
     // Change button color
