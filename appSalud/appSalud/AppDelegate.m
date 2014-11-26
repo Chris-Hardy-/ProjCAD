@@ -32,7 +32,7 @@
                                                            [UIColor colorWithRed:10.0/255.0 green:10.0/255.0 blue:10.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"Helvetica-Light" size:21.0], NSFontAttributeName, nil]];
-//    [self cargaInicial];
+    [self cargaInicial];
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:114 green:161 blue:54 alpha:1]];
     

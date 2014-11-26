@@ -10,6 +10,7 @@
 		2667627A19BBA75E0051A8E2 /* celdaNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667627919BBA75E0051A8E2 /* celdaNoticias.m */; };
 		266A85A119BBC646000390D9 /* ViewControllerMuestraNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 266A85A019BBC646000390D9 /* ViewControllerMuestraNoticias.m */; };
 		26B274C319C21EA600F5AEC0 /* ViewControllerConsejos.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B274C219C21EA600F5AEC0 /* ViewControllerConsejos.m */; };
+		26BBCA861A1E8A5400AF3196 /* Antipasto_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26BBCA851A1E8A3600AF3196 /* Antipasto_regular.otf */; };
 		3C04EB9C19E44EFC00BBA4AD /* ViewControllerNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C04EB9B19E44EFC00BBA4AD /* ViewControllerNoticias.m */; };
 		3C09D1281A000B41007706D9 /* Actualizar.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1271A000B41007706D9 /* Actualizar.xml */; };
 		3C09D12A1A000D82007706D9 /* Sucursales.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1291A000D82007706D9 /* Sucursales.xml */; };
@@ -99,6 +100,7 @@
 		266A85A019BBC646000390D9 /* ViewControllerMuestraNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerMuestraNoticias.m; path = ../ViewControllerMuestraNoticias.m; sourceTree = "<group>"; };
 		26B274C119C21EA600F5AEC0 /* ViewControllerConsejos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerConsejos.h; path = ../ViewControllerConsejos.h; sourceTree = "<group>"; };
 		26B274C219C21EA600F5AEC0 /* ViewControllerConsejos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerConsejos.m; path = ../ViewControllerConsejos.m; sourceTree = "<group>"; };
+		26BBCA851A1E8A3600AF3196 /* Antipasto_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Antipasto_regular.otf; sourceTree = "<group>"; };
 		3C04EB9A19E44EFC00BBA4AD /* ViewControllerNoticias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerNoticias.h; sourceTree = "<group>"; };
 		3C04EB9B19E44EFC00BBA4AD /* ViewControllerNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNoticias.m; sourceTree = "<group>"; };
 		3C09D1271A000B41007706D9 /* Actualizar.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Actualizar.xml; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26BBCA801A1E798E00AF3196 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				26BBCA851A1E8A3600AF3196 /* Antipasto_regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		3C48E59119A39F1A0044038B = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +299,7 @@
 		3C48E5A419A39F1A0044038B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				26BBCA801A1E798E00AF3196 /* Fonts */,
 				3C48E5D219A3A12C0044038B /* Images */,
 				3C48E5A519A39F1A0044038B /* appSalud-Info.plist */,
 				3C48E5A619A39F1A0044038B /* InfoPlist.strings */,
@@ -491,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BBCA861A1E8A5400AF3196 /* Antipasto_regular.otf in Resources */,
 				3CB81C451A029B4200AB7E58 /* backgroundTexture.png in Resources */,
 				3C277A5D19ACD51900D9EC6C /* logoGoogleNormal@2x.png in Resources */,
 				3CD5707519F6AA6200A82125 /* DSLCalendarDaySelection-right@2x.png in Resources */,
