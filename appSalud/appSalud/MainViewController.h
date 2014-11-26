@@ -15,4 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *botonMensajePersona1;
 @property (weak, nonatomic) IBOutlet UIButton *botonMensajePersona2;
 @property (weak, nonatomic) IBOutlet UIButton *botonMensajePersona3;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonSaludHgo;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonSecretaria;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonOrganigrama;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleRedes;
+@property (weak, nonatomic) IBOutlet UILabel *titleMensajes;
+
 @end

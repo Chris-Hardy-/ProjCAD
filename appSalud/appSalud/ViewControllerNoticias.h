@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *TablaNoticias;
 @property (weak, nonatomic) IBOutlet UITableView *TablaIndices;
 @property (weak, nonatomic) IBOutlet UITextField *editBoton;
-
+@property (weak, nonatomic) IBOutlet UIButton *buttonNutricional;
+@property (weak, nonatomic) IBOutlet UIButton *buttonEstacionales;
+@property (weak, nonatomic) IBOutlet UILabel *titleConsejos;
 
 @end

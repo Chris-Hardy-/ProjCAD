@@ -31,6 +31,7 @@
     
     self.title = @"Acerca de Nosotros";
     
+    
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     
@@ -46,6 +47,16 @@
     
     NSData *arrayData = [userDefaults objectForKey:@"arrayMensajes"];
     arrayMensajes = [NSKeyedUnarchiver unarchiveObjectWithData:arrayData];
+    
+    //button.titleLabel.font = [UIFont systemFontOfSize:size];
+    
+    self.ButtonSaludHgo.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.ButtonSecretaria.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.ButtonOrganigrama.titleLabel.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.titleRedes.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    self.titleMensajes.font = [UIFont fontWithName:@"Antipasto" size:18.0f];
+    
+    
     
 }
 
