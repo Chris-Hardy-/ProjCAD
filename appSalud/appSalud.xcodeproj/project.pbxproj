@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265C82691A267922004D856A /* ViewControllerVacantes.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C82681A267922004D856A /* ViewControllerVacantes.m */; };
+		265C826F1A267CA3004D856A /* ViewControllerContactanos.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C826E1A267CA3004D856A /* ViewControllerContactanos.m */; };
 		2667627A19BBA75E0051A8E2 /* celdaNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667627919BBA75E0051A8E2 /* celdaNoticias.m */; };
 		266A85A119BBC646000390D9 /* ViewControllerMuestraNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 266A85A019BBC646000390D9 /* ViewControllerMuestraNoticias.m */; };
 		26B274C319C21EA600F5AEC0 /* ViewControllerConsejos.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B274C219C21EA600F5AEC0 /* ViewControllerConsejos.m */; };
@@ -102,8 +104,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2667627819BBA75E0051A8E2 /* celdaNoticias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = celdaNoticias.h; sourceTree = "<group>"; };
-		2667627919BBA75E0051A8E2 /* celdaNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = celdaNoticias.m; sourceTree = "<group>"; };
+		265C82671A267922004D856A /* ViewControllerVacantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerVacantes.h; sourceTree = "<group>"; };
+		265C82681A267922004D856A /* ViewControllerVacantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerVacantes.m; sourceTree = "<group>"; };
+		265C826D1A267CA3004D856A /* ViewControllerContactanos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerContactanos.h; path = ../ViewControllerContactanos.h; sourceTree = "<group>"; };
+		265C826E1A267CA3004D856A /* ViewControllerContactanos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerContactanos.m; path = ../ViewControllerContactanos.m; sourceTree = "<group>"; };
+		2667627819BBA75E0051A8E2 /* celdaNoticias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = celdaNoticias.h; path = appSalud/celdaNoticias.h; sourceTree = "<group>"; };
+		2667627919BBA75E0051A8E2 /* celdaNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = celdaNoticias.m; path = appSalud/celdaNoticias.m; sourceTree = "<group>"; };
 		266A859F19BBC646000390D9 /* ViewControllerMuestraNoticias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerMuestraNoticias.h; path = ../ViewControllerMuestraNoticias.h; sourceTree = "<group>"; };
 		266A85A019BBC646000390D9 /* ViewControllerMuestraNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerMuestraNoticias.m; path = ../ViewControllerMuestraNoticias.m; sourceTree = "<group>"; };
 		26B274C119C21EA600F5AEC0 /* ViewControllerConsejos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerConsejos.h; path = ../ViewControllerConsejos.h; sourceTree = "<group>"; };
@@ -304,8 +310,6 @@
 				3C48E5D919A3A5BE0044038B /* MainViewController.m */,
 				3C42CE9919BBA583006CEC9A /* ViewControllerMensaje.h */,
 				3C42CE9A19BBA583006CEC9A /* ViewControllerMensaje.m */,
-				2667627819BBA75E0051A8E2 /* celdaNoticias.h */,
-				2667627919BBA75E0051A8E2 /* celdaNoticias.m */,
 				266A859F19BBC646000390D9 /* ViewControllerMuestraNoticias.h */,
 				266A85A019BBC646000390D9 /* ViewControllerMuestraNoticias.m */,
 				26B274C119C21EA600F5AEC0 /* ViewControllerConsejos.h */,
@@ -318,6 +322,10 @@
 				3C58689B19FAB5FF00361341 /* ViewControllerSucursales.m */,
 				3C9716A71A264BDF0065775A /* ViewControllerADondeMeDirijo.h */,
 				3C9716A81A264BDF0065775A /* ViewControllerADondeMeDirijo.m */,
+				265C82671A267922004D856A /* ViewControllerVacantes.h */,
+				265C82681A267922004D856A /* ViewControllerVacantes.m */,
+				265C826D1A267CA3004D856A /* ViewControllerContactanos.h */,
+				265C826E1A267CA3004D856A /* ViewControllerContactanos.m */,
 				3C358C0E1A24FD10009108CC /* Mapa */,
 				3C48E5B519A39F1A0044038B /* Images.xcassets */,
 				3C48E5DF19A3D57D0044038B /* Library */,
@@ -329,7 +337,6 @@
 		3C48E5A419A39F1A0044038B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26BBCA801A1E798E00AF3196 /* Fonts */,
 				3C48E5D219A3A12C0044038B /* Images */,
 				3C48E5A519A39F1A0044038B /* appSalud-Info.plist */,
 				3C48E5A619A39F1A0044038B /* InfoPlist.strings */,
@@ -404,6 +411,8 @@
 				3C8B287019AFBA0500F632BF /* galeriaImagenes.m */,
 				3CCB011C19BF6852002FB971 /* noticia.h */,
 				3CCB011D19BF6852002FB971 /* noticia.m */,
+				2667627819BBA75E0051A8E2 /* celdaNoticias.h */,
+				2667627919BBA75E0051A8E2 /* celdaNoticias.m */,
 				3CCB011F19BF72F9002FB971 /* indice_consejo.h */,
 				3CCB012019BF72F9002FB971 /* indice_consejo.m */,
 				3C25CEEF19F95949004F5AA0 /* sucursal.h */,
@@ -620,9 +629,11 @@
 				3C8B286619AF8EB200F632BF /* loadDataAcercaNosotros.m in Sources */,
 				3C6A4FD919EDC2AD00863BA7 /* ViewControllerCalendario.m in Sources */,
 				3CD5706219F6AA6200A82125 /* DSLCalendarDayCalloutView.m in Sources */,
+				265C826F1A267CA3004D856A /* ViewControllerContactanos.m in Sources */,
 				3CB81C3D1A02905A00AB7E58 /* loadDataActualizar.m in Sources */,
 				3C8B286E19AFB6FA00F632BF /* mensaje.m in Sources */,
 				3C358C0D1A24F86B009108CC /* CalloutMapAnnotationView.m in Sources */,
+				265C82691A267922004D856A /* ViewControllerVacantes.m in Sources */,
 				3CCB011B19BF63BE002FB971 /* loadDataNoticias.m in Sources */,
 				3CD5707819F6AA6200A82125 /* NSDate+DSLCalendarView.m in Sources */,
 			);

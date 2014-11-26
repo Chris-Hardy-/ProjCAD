@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    menuItems = @[@"info", @"sucursales", @"calendario", @"noticias", @"donde", @"contactanos"];
+    menuItems = @[@"info", @"sucursales", @"calendario", @"noticias", @"donde", @"contactanos" ,@"trabaja", @"encuestas"];
     
 }
 
