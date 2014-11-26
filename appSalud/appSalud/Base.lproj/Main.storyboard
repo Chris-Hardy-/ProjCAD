@@ -148,6 +148,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="TablaVacantes" destination="3Cg-8a-R5e" id="Gyh-Z5-Ild"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aE-Jg-0Mc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
