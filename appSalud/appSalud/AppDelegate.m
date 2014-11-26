@@ -32,7 +32,7 @@
                                                            [UIColor colorWithRed:10.0/255.0 green:10.0/255.0 blue:10.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"Helvetica-Light" size:21.0], NSFontAttributeName, nil]];
-//    [self cargaInicial];
+    [self cargaInicial];
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:114 green:161 blue:54 alpha:1]];
     
@@ -87,9 +87,9 @@
     [loader cargaInicial];
     
     //  CARGA DE XML SECCION ACERCA DE NOSOTROS
-    imagen = [self loadImage:loader.urlOrganigrama];
-    imagenData = UIImagePNGRepresentation(imagen);
-    [userDefaults setObject:imagenData forKey:@"imagenOrganigrama"];
+//    imagen = [self loadImage:loader.urlOrganigrama];
+//    imagenData = UIImagePNGRepresentation(imagen);
+//    [userDefaults setObject:imagenData forKey:@"imagenOrganigrama"];
     
     //CARGA ARRAY MENSAJES
     for (int i=0; i<[loader.arrayMensajes count]; i++) {
@@ -178,6 +178,7 @@
     }
     else
     {
+        NSLog(@"no se pudo cargar la imagen");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No se pudo cargar imagen" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Ok", nil];
         [alert show];
         return nil;

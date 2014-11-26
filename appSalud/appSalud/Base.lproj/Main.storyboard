@@ -8,7 +8,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="revealvc" id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171" y="990"/>
+            <point key="canvasLocation" x="-33" y="990"/>
         </scene>
         <!--Sidebar View Controller - Sidebar-->
         <scene sceneID="DxS-BA-HmN">
@@ -112,11 +112,11 @@
                                     <segue destination="jGx-0Q-IcC" kind="custom" customClass="SWRevealViewControllerSegue" id="moh-gL-tUB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="donde" id="Ter-Fw-5Zw">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="donde" id="Ter-Fw-5Zw">
                                 <rect key="frame" x="0.0" y="198" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ter-Fw-5Zw" id="1M9-RG-Cy1">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¿A dónde me dirijo?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-9J-fgy">
@@ -127,6 +127,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3w7-Za-tNE" kind="custom" customClass="SWRevealViewControllerSegue" id="gOZ-o7-RVM"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactanos" id="QHE-pF-Ow7">
                                 <rect key="frame" x="0.0" y="242" width="320" height="44"/>
@@ -158,7 +161,7 @@
         <!--View Controller Noticias-->
         <scene sceneID="GRi-eT-3cc">
             <objects>
-                <viewController id="jGx-0Q-IcC" customClass="ViewControllerNoticias" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcnoticias" id="jGx-0Q-IcC" customClass="ViewControllerNoticias" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hj1-mb-vMU"/>
                         <viewControllerLayoutGuide type="bottom" id="ER3-fW-M5M"/>
@@ -284,12 +287,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quX-4W-eJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="14"/>
+            <point key="canvasLocation" x="1295" y="-242"/>
         </scene>
-        <!--View Controller-->
+        <!--View ControllerA Donde Me Dirijo-->
         <scene sceneID="WHE-vi-8JJ">
             <objects>
-                <viewController id="3w7-Za-tNE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcadonde" id="3w7-Za-tNE" customClass="ViewControllerADondeMeDirijo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Psk-CQ-8h0"/>
                         <viewControllerLayoutGuide type="bottom" id="hNb-QI-gu9"/>
@@ -314,6 +317,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="botonReciendNacido:" destination="3w7-Za-tNE" eventType="touchUpInside" id="fbD-ei-hXn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra0-qe-qZ9">
                                 <rect key="frame" x="137" y="86" width="46" height="30"/>
@@ -321,6 +327,9 @@
                                 <state key="normal" title="Niño">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="botonNino:" destination="3w7-Za-tNE" eventType="touchUpInside" id="FN9-aV-Qtt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbX-sR-ZHT">
                                 <rect key="frame" x="254" y="86" width="46" height="30"/>
@@ -328,6 +337,9 @@
                                 <state key="normal" title="Adulto">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="botonAdulto:" destination="3w7-Za-tNE" eventType="touchUpInside" id="QYe-Qo-9he"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-8d-HJw">
                                 <rect key="frame" x="186" y="105" width="114" height="162"/>
@@ -363,18 +375,36 @@
                                 <rect key="frame" x="219" y="359" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBR-6A-AWv">
+                                <rect key="frame" x="123" y="421" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Evaluar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="botonEvaluar:" destination="3w7-Za-tNE" eventType="touchUpInside" id="BHk-2S-Lta"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="botonAdulto" destination="DbX-sR-ZHT" id="gZG-DF-zZ4"/>
+                        <outlet property="botonNacido" destination="EJo-tp-l4D" id="5x0-Wi-Uno"/>
+                        <outlet property="botonNino" destination="Ra0-qe-qZ9" id="KpQ-Jf-HVA"/>
+                        <outlet property="pickerTemperatura" destination="IUg-8d-HJw" id="jZu-Y5-JKi"/>
+                        <outlet property="switchHemorragia" destination="DjJ-9U-7Xj" id="Y75-rM-ziJ"/>
+                        <outlet property="switchTrasladar" destination="dCC-Tb-SBF" id="dgR-ly-fkB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxH-VF-q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="-1859"/>
+            <point key="canvasLocation" x="1295" y="-1520"/>
         </scene>
         <!--View Controller Sucursales-->
         <scene sceneID="HKZ-H7-tj9">
             <objects>
-                <viewController id="Z5q-Kf-WfL" customClass="ViewControllerSucursales" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcsucursales" id="Z5q-Kf-WfL" customClass="ViewControllerSucursales" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Cd-3n-dRq"/>
                         <viewControllerLayoutGuide type="bottom" id="csf-39-lba"/>
@@ -398,17 +428,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapSurcursales" destination="Bzg-cr-f6Z" id="R20-Bf-oWl"/>
+                        <outlet property="mapView" destination="Bzg-cr-f6Z" id="F6l-hn-qFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZh-RQ-skW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="-1258"/>
+            <point key="canvasLocation" x="1295" y="-898"/>
         </scene>
         <!--View Controller Calendario-->
         <scene sceneID="aJb-bA-wRj">
             <objects>
-                <viewController id="JrW-zf-U7A" customClass="ViewControllerCalendario" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vccalendario" id="JrW-zf-U7A" customClass="ViewControllerCalendario" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tk3-Lv-MpK"/>
                         <viewControllerLayoutGuide type="bottom" id="VYc-kK-HlY"/>
@@ -432,12 +462,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwf-oS-mbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="-621"/>
+            <point key="canvasLocation" x="1295" y="355"/>
         </scene>
         <!--View Controller Muestra Noticias-->
         <scene sceneID="vtd-UR-mDi">
             <objects>
-                <viewController id="dEb-VU-NoN" customClass="ViewControllerMuestraNoticias" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcmuestranot" id="dEb-VU-NoN" customClass="ViewControllerMuestraNoticias" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dgk-nP-Rgq"/>
                         <viewControllerLayoutGuide type="bottom" id="9Tm-8N-7lm"/>
@@ -484,12 +514,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79m-De-CPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="-450"/>
+            <point key="canvasLocation" x="1835" y="-574"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ffq-Qh-NYX">
             <objects>
-                <navigationController id="44t-fh-4of" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navcont" id="44t-fh-4of" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aVB-cY-t6U">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -499,12 +529,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxK-3o-4Ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="990"/>
+            <point key="canvasLocation" x="626" y="990"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="lWj-Ot-aGf">
             <objects>
-                <viewController id="6hZ-SW-v13" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mvcontrolles" id="6hZ-SW-v13" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VUP-R0-FST"/>
                         <viewControllerLayoutGuide type="bottom" id="j4s-89-Vn4"/>
@@ -709,7 +739,7 @@
         <!--View Controller Mensaje-->
         <scene sceneID="x6y-IS-LGY">
             <objects>
-                <viewController id="chg-fe-Sc1" customClass="ViewControllerMensaje" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcmensaje" id="chg-fe-Sc1" customClass="ViewControllerMensaje" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hZs-pl-OOi"/>
                         <viewControllerLayoutGuide type="bottom" id="TTl-QZ-xV9"/>
@@ -818,7 +848,7 @@
         <!--View Controller Consejos-->
         <scene sceneID="Y0g-Q0-sbR">
             <objects>
-                <viewController id="ZPf-2f-lvC" customClass="ViewControllerConsejos" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcconsejos" id="ZPf-2f-lvC" customClass="ViewControllerConsejos" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d69-Ib-S8l"/>
                         <viewControllerLayoutGuide type="bottom" id="QRL-Ns-VvL"/>
@@ -855,7 +885,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dm8-UQ-Ey2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="129"/>
+            <point key="canvasLocation" x="1835" y="25"/>
         </scene>
     </scenes>
     <resources>
@@ -872,8 +902,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Asc-t3-1Ux"/>
-        <segue reference="q6h-ab-Og1"/>
+        <segue reference="w4T-Go-zFk"/>
         <segue reference="C4a-ZB-qXH"/>
+        <segue reference="WTA-kT-t14"/>
     </inferredMetricsTieBreakers>
 </document>

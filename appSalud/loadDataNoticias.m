@@ -54,25 +54,21 @@
 
 - (void)parseXML{
     
-    NSString *xmlPath = [[NSBundle mainBundle] pathForResource:@"Noticias" ofType:@"xml"];
-    NSData *xmlData = [NSData dataWithContentsOfFile:xmlPath];
-    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
-    parser = xmlParser;
-    [parser setDelegate:self];
+//    NSString *xmlPath = [[NSBundle mainBundle] pathForResource:@"Noticias" ofType:@"xml"];
+//    NSData *xmlData = [NSData dataWithContentsOfFile:xmlPath];
+//    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
+//    parser = xmlParser;
+//    [parser setDelegate:self];
+//    stringTemp = [[NSString alloc] init];
+//    [parser parse];
     
-    stringTemp = [[NSString alloc] init];
-    //parser.delegate = self;
-    
+    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenNoticiasIndicadoresConsejos.php";
+    NSURL *xmlURL = [NSURL URLWithString:path];
+    parser = [NSURL URLWithString:path ];
+    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+    parser.delegate = self;
     [parser parse];
     
-    
-    //    NSString *path = @"http://aqtiva.mx/olinia/prueba1.xml";
-    //
-    //    NSURL *xmlURL = [NSURL URLWithString:path ];
-    //    parser =
-    //    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
-    //    parser.delegate = self;
-    //    [parser parse];
 }
 
 #pragma mark - NSXMLParserDelegate
@@ -95,8 +91,6 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    
     
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
@@ -121,22 +115,27 @@
         tempNoticia.textoNoticia = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
-    }
-    else if ([elementName isEqualToString:@"urlNoticia"]) {
-        tempNoticia.urlNoticia = stringBuffer;
         
         [self.arrayNoticias addObject:tempNoticia];
         tempNoticia = [[noticia alloc]init];
         stringTemp=@"";
         stringBuffer=@"";
     }
-    else if ([elementName isEqualToString:@"tituloindicador"]) {
+    else if ([elementName isEqualToString:@"urlNoticia"]) {
+        tempNoticia.urlNoticia = stringBuffer;
+        
+//        [self.arrayNoticias addObject:tempNoticia];
+//        tempNoticia = [[noticia alloc]init];
+//        stringTemp=@"";
+//        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"tituloIndicador"]) {
         tempIndiceConsejo.titulo = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
     }
-    else if ([elementName isEqualToString:@"textoindicador"]) {
-        tempIndiceConsejo.texto = stringBuffer;
+    else if ([elementName isEqualToString:@"porcentaje"]) {
+        tempIndiceConsejo.texto = [stringBuffer stringByAppendingString:@"%"];
         [self.arrayIndicadores addObject:tempIndiceConsejo];
         tempIndiceConsejo = [[indice_consejo alloc]init];
         stringTemp=@"";

@@ -42,23 +42,22 @@
 
 - (void)parseXML{
     
-    NSString *xmlPath = [[NSBundle mainBundle] pathForResource:@"AcercaDeNosotros" ofType:@"xml"];
-    NSData *xmlData = [NSData dataWithContentsOfFile:xmlPath];
-    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
-    stringTemp = [[NSString alloc] init];
-    parser = xmlParser;
+//    NSString *xmlPath = [[NSBundle mainBundle] pathForResource:@"AcercaDeNosotros" ofType:@"xml"];
+//    NSData *xmlData = [NSData dataWithContentsOfFile:xmlPath];
+//    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
+//    stringTemp = [[NSString alloc] init];
+//    parser = xmlParser;
+//    parser.delegate = self;
+//    
+//    [parser parse];
+    
+    
+    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenAcercaGaleria.php";
+    NSURL *xmlURL = [NSURL URLWithString:path];
+    parser = [NSURL URLWithString:path ];
+    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     parser.delegate = self;
-    
     [parser parse];
-    
-    
-    //    NSString *path = @"http://aqtiva.mx/olinia/prueba1.xml";
-    //
-    //    NSURL *xmlURL = [NSURL URLWithString:path];
-    //    parser =
-    //    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
-    //    parser.delegate = self;
-    //    [parser parse];
 }
 
 #pragma mark - NSXMLParserDelegate
@@ -74,20 +73,18 @@
         self.arrayGaleria = [[NSMutableArray alloc] init];
         self.arrayMensajes = [[NSMutableArray alloc] init];
         imagenAgregar = [[galeriaImagenes alloc ] init];
+        stringTemp = [[NSString alloc] init];
+        stringBuffer = [[NSString alloc] init];
         
         
     }
     
     else
         stringBuffer = [[NSString alloc] init];
-    
-    //        else if ([elementName isEqualToString:@"idRuta"] || [elementName isEqualToString:@"precio"]  || [elementName isEqualToString:@"nombreRuta"] || [elementName isEqualToString:@"origen"] || [elementName isEqualToString:@"destino"] || [elementName isEqualToString:@"imageCromatica"] || [elementName isEqualToString:@"imageParada"] || [elementName isEqualToString:@"punto"] || [elementName isEqualToString:@"sentido"] || [elementName isEqualToString:@"idpunto"] || [elementName isEqualToString:@"latitud"] || [elementName isEqualToString:@"longitud"] || [elementName isEqualToString:@"nombre"]){
-    //            stringBuffer = [[NSMutableString alloc] init];
-    //        }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    //stringBuffer=@"";
+
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     stringTemp = [stringTemp stringByAppendingString:string];
@@ -108,7 +105,7 @@
         stringTemp=@"";
         stringBuffer=@"";
     }
-    else if ([elementName isEqualToString:@"urlfoto"]) {
+    else if ([elementName isEqualToString:@"urlFoto"]) {
         mensajeAgregar.urlImagen = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
@@ -132,9 +129,9 @@
     else if ([elementName isEqualToString:@"urlOrga"]) {
         self.urlOrganigrama = stringBuffer;
     }
-//    else if ([elementName isEqualToString:@"galeria"]) {
-//        arrayGaleria = [[NSMutableArray alloc ]init ];
-//    }
+    //    else if ([elementName isEqualToString:@"galeria"]) {
+    //        arrayGaleria = [[NSMutableArray alloc ]init ];
+    //    }
     else if ([elementName isEqualToString:@"imagen"]) {
         //imagenAgregar = [[galeriaImagenes alloc ] init];
     }
