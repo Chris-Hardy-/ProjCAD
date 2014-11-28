@@ -13,6 +13,10 @@
 		266A85A119BBC646000390D9 /* ViewControllerMuestraNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 266A85A019BBC646000390D9 /* ViewControllerMuestraNoticias.m */; };
 		26B274C319C21EA600F5AEC0 /* ViewControllerConsejos.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B274C219C21EA600F5AEC0 /* ViewControllerConsejos.m */; };
 		26BBCA861A1E8A5400AF3196 /* Antipasto_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26BBCA851A1E8A3600AF3196 /* Antipasto_regular.otf */; };
+		26FDC4E41A29007600A8EF6A /* loadDataVacantes.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDC4E31A29007600A8EF6A /* loadDataVacantes.m */; };
+		26FDC4E71A2906C600A8EF6A /* vacante.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDC4E61A2906C600A8EF6A /* vacante.m */; };
+		26FDC4EA1A29144D00A8EF6A /* vacanteServicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDC4E91A29144D00A8EF6A /* vacanteServicio.m */; };
+		26FDC4ED1A291C5200A8EF6A /* loadDataVacanteServicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDC4EC1A291C5200A8EF6A /* loadDataVacanteServicio.m */; };
 		3C04EB9C19E44EFC00BBA4AD /* ViewControllerNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C04EB9B19E44EFC00BBA4AD /* ViewControllerNoticias.m */; };
 		3C09D1281A000B41007706D9 /* Actualizar.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1271A000B41007706D9 /* Actualizar.xml */; };
 		3C09D12A1A000D82007706D9 /* Sucursales.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1291A000D82007706D9 /* Sucursales.xml */; };
@@ -115,6 +119,14 @@
 		26B274C119C21EA600F5AEC0 /* ViewControllerConsejos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerConsejos.h; path = ../ViewControllerConsejos.h; sourceTree = "<group>"; };
 		26B274C219C21EA600F5AEC0 /* ViewControllerConsejos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerConsejos.m; path = ../ViewControllerConsejos.m; sourceTree = "<group>"; };
 		26BBCA851A1E8A3600AF3196 /* Antipasto_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Antipasto_regular.otf; sourceTree = "<group>"; };
+		26FDC4E21A29007600A8EF6A /* loadDataVacantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadDataVacantes.h; path = appSalud/loadDataVacantes.h; sourceTree = "<group>"; };
+		26FDC4E31A29007600A8EF6A /* loadDataVacantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadDataVacantes.m; path = appSalud/loadDataVacantes.m; sourceTree = "<group>"; };
+		26FDC4E51A2906C600A8EF6A /* vacante.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vacante.h; path = appSalud/vacante.h; sourceTree = "<group>"; };
+		26FDC4E61A2906C600A8EF6A /* vacante.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = vacante.m; path = appSalud/vacante.m; sourceTree = "<group>"; };
+		26FDC4E81A29144D00A8EF6A /* vacanteServicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vacanteServicio.h; path = appSalud/vacanteServicio.h; sourceTree = "<group>"; };
+		26FDC4E91A29144D00A8EF6A /* vacanteServicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = vacanteServicio.m; path = appSalud/vacanteServicio.m; sourceTree = "<group>"; };
+		26FDC4EB1A291C5200A8EF6A /* loadDataVacanteServicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadDataVacanteServicio.h; path = appSalud/loadDataVacanteServicio.h; sourceTree = "<group>"; };
+		26FDC4EC1A291C5200A8EF6A /* loadDataVacanteServicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadDataVacanteServicio.m; path = appSalud/loadDataVacanteServicio.m; sourceTree = "<group>"; };
 		3C04EB9A19E44EFC00BBA4AD /* ViewControllerNoticias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerNoticias.h; sourceTree = "<group>"; };
 		3C04EB9B19E44EFC00BBA4AD /* ViewControllerNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNoticias.m; sourceTree = "<group>"; };
 		3C09D1271A000B41007706D9 /* Actualizar.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Actualizar.xml; sourceTree = "<group>"; };
@@ -405,6 +417,10 @@
 				3C25CEED19F958EC004F5AA0 /* loadDataSucursales.m */,
 				3CB81C3B1A02905A00AB7E58 /* loadDataActualizar.h */,
 				3CB81C3C1A02905A00AB7E58 /* loadDataActualizar.m */,
+				26FDC4E21A29007600A8EF6A /* loadDataVacantes.h */,
+				26FDC4E31A29007600A8EF6A /* loadDataVacantes.m */,
+				26FDC4EB1A291C5200A8EF6A /* loadDataVacanteServicio.h */,
+				26FDC4EC1A291C5200A8EF6A /* loadDataVacanteServicio.m */,
 				3C8B286C19AFB6FA00F632BF /* mensaje.h */,
 				3C8B286D19AFB6FA00F632BF /* mensaje.m */,
 				3C8B286F19AFBA0500F632BF /* galeriaImagenes.h */,
@@ -417,6 +433,10 @@
 				3CCB012019BF72F9002FB971 /* indice_consejo.m */,
 				3C25CEEF19F95949004F5AA0 /* sucursal.h */,
 				3C25CEF019F95949004F5AA0 /* sucursal.m */,
+				26FDC4E51A2906C600A8EF6A /* vacante.h */,
+				26FDC4E61A2906C600A8EF6A /* vacante.m */,
+				26FDC4E81A29144D00A8EF6A /* vacanteServicio.h */,
+				26FDC4E91A29144D00A8EF6A /* vacanteServicio.m */,
 			);
 			name = Library;
 			path = ..;
@@ -601,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FDC4E41A29007600A8EF6A /* loadDataVacantes.m in Sources */,
 				26B274C319C21EA600F5AEC0 /* ViewControllerConsejos.m in Sources */,
 				3CD5706419F6AA6200A82125 /* DSLCalendarDayView.m in Sources */,
 				3C48E5AE19A39F1A0044038B /* AppDelegate.m in Sources */,
@@ -611,6 +632,7 @@
 				3C42CE9B19BBA583006CEC9A /* ViewControllerMensaje.m in Sources */,
 				3CCB011E19BF6852002FB971 /* noticia.m in Sources */,
 				3CCB012119BF72F9002FB971 /* indice_consejo.m in Sources */,
+				26FDC4E71A2906C600A8EF6A /* vacante.m in Sources */,
 				3C48E5DA19A3A5BE0044038B /* MainViewController.m in Sources */,
 				3C48E5D719A3A4690044038B /* SidebarViewController.m in Sources */,
 				3C48E5E219A3D5960044038B /* SWRevealViewController.m in Sources */,
@@ -623,10 +645,12 @@
 				3C358C0A1A24F770009108CC /* BasicMapAnnotation.m in Sources */,
 				3C04EB9C19E44EFC00BBA4AD /* ViewControllerNoticias.m in Sources */,
 				3C58689C19FAB5FF00361341 /* ViewControllerSucursales.m in Sources */,
+				26FDC4ED1A291C5200A8EF6A /* loadDataVacanteServicio.m in Sources */,
 				3C358C071A24F709009108CC /* CalloutMapAnnotation.m in Sources */,
 				3C8B287119AFBA0500F632BF /* galeriaImagenes.m in Sources */,
 				266A85A119BBC646000390D9 /* ViewControllerMuestraNoticias.m in Sources */,
 				3C8B286619AF8EB200F632BF /* loadDataAcercaNosotros.m in Sources */,
+				26FDC4EA1A29144D00A8EF6A /* vacanteServicio.m in Sources */,
 				3C6A4FD919EDC2AD00863BA7 /* ViewControllerCalendario.m in Sources */,
 				3CD5706219F6AA6200A82125 /* DSLCalendarDayCalloutView.m in Sources */,
 				265C826F1A267CA3004D856A /* ViewControllerContactanos.m in Sources */,

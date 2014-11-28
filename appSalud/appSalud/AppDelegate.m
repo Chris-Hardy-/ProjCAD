@@ -163,6 +163,14 @@
     [userDefaults setObject:arrayData forKey:@"arraySucursales"];
     [arrayTemp removeAllObjects];
     
+    //CARGA DE XML VACANTES
+    someArray= [[NSArray alloc] initWithArray:loaderNoticas.arrayConsejosNutricionales];
+    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    [userDefaults setObject:arrayData forKey:@"arrayConsejosNutricionales"];
+    [arrayTemp removeAllObjects];
+    
+    //CARGA DE XML COMUNICATE
+    
 }
 
 -(UIImage*) loadImage:(NSString *) url_imagen
