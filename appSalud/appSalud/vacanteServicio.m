@@ -14,6 +14,7 @@
 @synthesize periodoInicio=_periodoInicio;
 @synthesize periodoFin=_periodoFin;
 @synthesize habilidades=_habilidades;
+@synthesize perfil=_perfil;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
@@ -26,6 +27,7 @@
     self.periodoInicio = [decoder decodeObjectForKey:@"periodoInicio"];
     self.periodoFin = [decoder decodeObjectForKey:@"periodoFin"];
     self.habilidades= [decoder decodeObjectForKey:@"habilidades"];
+    self.perfil = [decoder decodeObjectForKey:@"perfil"];
     
     return self;
 }
@@ -35,6 +37,7 @@
     [encoder encodeObject:self.periodoInicio forKey:@"periodoInicio"];
     [encoder encodeObject:self.periodoFin forKey:@"periodoFin"];
     [encoder encodeObject:self.habilidades forKey:@"habilidades"];
+    [encoder encodeObject:self.habilidades forKey:@"perfil"];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerContactanos.h"
+#import "SWRevealViewController.h"
 
 @interface ViewControllerContactanos ()
 
@@ -27,6 +28,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIImage *menu = [UIImage imageNamed:@"menu.png"];
+    
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
+                                   initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    self.navigationItem.leftBarButtonItem = flipButton;
+    
+    self.title = @"Contactanos";
+
 }
 
 - (void)didReceiveMemoryWarning

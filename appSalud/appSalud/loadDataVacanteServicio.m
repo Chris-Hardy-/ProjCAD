@@ -12,7 +12,10 @@
 @interface loadDataVacanteServicio () {
     NSXMLParser *parser;
     NSString *stringBuffer;
+    NSString *stringTemp;
     NSMutableArray *arrayVacanteServicio;
+    
+    vacanteServicio *tempVacanteS;
     
 }
 
@@ -22,6 +25,11 @@
 @implementation loadDataVacanteServicio
 
 @synthesize arrayVacanteServicio = _arrayVacanteServicio;
+
+-(void)cargaInicial{
+    self.arrayVacanteServicio = [[NSMutableArray alloc] init];
+    [self parseXML];
+}
 
 
 - (void)parseXML{
@@ -34,5 +42,78 @@
     [parser parse];
     
 }
+
+#pragma mark - NSXMLParserDelegate
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+    //_arrayDatos = [[Ruta alloc] init];
+}
+
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    if ([elementName isEqualToString:@"ServicioSocialSSH"]) {
+        tempVacanteS = [[vacanteServicio alloc]init];
+    }
+    
+    else
+        stringBuffer = [[NSString alloc] init];
+}
+
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    stringTemp = [stringTemp stringByAppendingString:string];
+    stringBuffer = stringTemp;
+    
+}
+
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([elementName isEqualToString:@"serviciosocial"]) {
+          tempVacanteS.servicioSocial = stringBuffer;
+          stringTemp=@"";
+          stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"periodoinicio"]) {
+        tempVacanteS.periodoInicio = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"periodofin"]) {
+        tempVacanteS.periodoFin = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+        
+        [self.arrayVacanteServicio addObject:tempVacanteS];
+        tempVacanteS = [[vacanteServicio alloc]init];
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"habilidades"]) {
+        tempVacanteS.habilidades = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+        
+        [self.arrayVacanteServicio addObject:tempVacanteS];
+       tempVacanteS = [[vacanteServicio alloc]init];
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"perfil"]) {
+        tempVacanteS.perfil = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSString * errorString = [NSString stringWithFormat:@"Error while processing XML file (Error code %ld)",(long)[parseError code]];
+    UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:errorString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
 
 @end

@@ -14,4 +14,6 @@
 @property (nonatomic, copy)NSString *periodoInicio;
 @property (nonatomic, copy)NSString *periodoFin;
 @property (nonatomic, copy)NSString *habilidades;
+@property (nonatomic, copy)NSString *perfil;
+
 @end

@@ -12,3 +12,6 @@
 @property (nonatomic) NSMutableArray *arrayVacanteServicio;
 
 @end
+
+
+
