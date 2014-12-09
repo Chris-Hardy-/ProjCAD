@@ -16,6 +16,9 @@
 		3C09D12A1A000D82007706D9 /* Sucursales.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1291A000D82007706D9 /* Sucursales.xml */; };
 		3C25CEEE19F958EC004F5AA0 /* loadDataSucursales.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C25CEED19F958EC004F5AA0 /* loadDataSucursales.m */; };
 		3C25CEF119F95949004F5AA0 /* sucursal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C25CEF019F95949004F5AA0 /* sucursal.m */; };
+		3C2707111A377C110062F157 /* logo58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C27070E1A377C110062F157 /* logo58x58.png */; };
+		3C2707121A377C110062F157 /* logo80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C27070F1A377C110062F157 /* logo80x80.png */; };
+		3C2707131A377C110062F157 /* logo120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2707101A377C110062F157 /* logo120x120.png */; };
 		3C277A5219ACCBBD00D9EC6C /* logoFB.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C277A5119ACCBBD00D9EC6C /* logoFB.png */; };
 		3C277A5919ACD50A00D9EC6C /* logoGoogleNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C277A5719ACD50A00D9EC6C /* logoGoogleNormal.png */; };
 		3C277A5D19ACD51900D9EC6C /* logoGoogleNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C277A5B19ACD51900D9EC6C /* logoGoogleNormal@2x.png */; };
@@ -117,6 +120,9 @@
 		3C25CEED19F958EC004F5AA0 /* loadDataSucursales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadDataSucursales.m; path = appSalud/loadDataSucursales.m; sourceTree = "<group>"; };
 		3C25CEEF19F95949004F5AA0 /* sucursal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sucursal.h; sourceTree = "<group>"; };
 		3C25CEF019F95949004F5AA0 /* sucursal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sucursal.m; sourceTree = "<group>"; };
+		3C27070E1A377C110062F157 /* logo58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo58x58.png; sourceTree = "<group>"; };
+		3C27070F1A377C110062F157 /* logo80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo80x80.png; sourceTree = "<group>"; };
+		3C2707101A377C110062F157 /* logo120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo120x120.png; sourceTree = "<group>"; };
 		3C277A5119ACCBBD00D9EC6C /* logoFB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoFB.png; sourceTree = "<group>"; };
 		3C277A5719ACD50A00D9EC6C /* logoGoogleNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGoogleNormal.png; sourceTree = "<group>"; };
 		3C277A5B19ACD51900D9EC6C /* logoGoogleNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoGoogleNormal@2x.png"; sourceTree = "<group>"; };
@@ -329,7 +335,6 @@
 		3C48E5A419A39F1A0044038B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26BBCA801A1E798E00AF3196 /* Fonts */,
 				3C48E5D219A3A12C0044038B /* Images */,
 				3C48E5A519A39F1A0044038B /* appSalud-Info.plist */,
 				3C48E5A619A39F1A0044038B /* InfoPlist.strings */,
@@ -364,6 +369,9 @@
 		3C48E5D219A3A12C0044038B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C27070E1A377C110062F157 /* logo58x58.png */,
+				3C27070F1A377C110062F157 /* logo80x80.png */,
+				3C2707101A377C110062F157 /* logo120x120.png */,
 				3C48E5D319A3A1450044038B /* nav_bg.png */,
 				3C48E5DB19A3A6C70044038B /* menu@2x.png */,
 				3C48E5DD19A3A7940044038B /* menu.png */,
@@ -540,8 +548,10 @@
 				3CD5707519F6AA6200A82125 /* DSLCalendarDaySelection-right@2x.png in Resources */,
 				3CD5706619F6AA6200A82125 /* DSLCalendarMonthSelectorView.xib in Resources */,
 				3C277A6219ACF1C600D9EC6C /* iconoEmail.png in Resources */,
+				3C2707111A377C110062F157 /* logo58x58.png in Resources */,
 				3C48E5B619A39F1A0044038B /* Images.xcassets in Resources */,
 				3CD5706E19F6AA6200A82125 /* DSLCalendarDayCallout.png in Resources */,
+				3C2707131A377C110062F157 /* logo120x120.png in Resources */,
 				3CD5706C19F6AA6200A82125 /* DSLCalendar-previousMonth.png in Resources */,
 				3C277A6419ACF96C00D9EC6C /* defaultImage.png in Resources */,
 				3CD5707019F6AA6200A82125 /* DSLCalendarDaySelection-left.png in Resources */,
@@ -550,6 +560,7 @@
 				3C48E5A819A39F1A0044038B /* InfoPlist.strings in Resources */,
 				3C8B286819AF918100F632BF /* AcercaDeNosotros.xml in Resources */,
 				3CD5706B19F6AA6200A82125 /* DSLCalendar-nextMonth@2x.png in Resources */,
+				3C2707121A377C110062F157 /* logo80x80.png in Resources */,
 				3CD5706A19F6AA6200A82125 /* DSLCalendar-nextMonth.png in Resources */,
 				3CB81C401A02995100AB7E58 /* launchImage2.png in Resources */,
 				3CD5706F19F6AA6200A82125 /* DSLCalendarDayCallout@2x.png in Resources */,
