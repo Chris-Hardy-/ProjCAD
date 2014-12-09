@@ -84,6 +84,7 @@
         self.arrayIndicadores = [[NSMutableArray alloc]init];
         tempNoticia = [[noticia alloc]init];
         tempIndiceConsejo = [[indice_consejo alloc]init];
+        stringTemp = [[NSString alloc] init];
     }
     
     else
