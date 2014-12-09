@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerVacantes : UIViewController <UITableViewDelegate, UITableViewDataSource>{
-    //    IBOutlet UITableView *TablaVacantes;
-    NSArray *tableData;
-    
-}
-@property (weak, nonatomic) IBOutlet UITableView *TablaVacantes;
+@interface ViewControllerVacantes : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tablaVacantes;
 @property (weak, nonatomic) IBOutlet UITextField *editBotonVacantes;
 
 @property (weak, nonatomic) IBOutlet UITextField *editTitulo;
@@ -31,5 +28,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *botonAplicar;
 
+@property (weak, nonatomic) IBOutlet UITextField *editPublicacionInicio;
 
 @end
