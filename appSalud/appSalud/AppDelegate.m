@@ -187,6 +187,10 @@
     [userDefaults setObject:arrayData forKey:@"arrayVacantesServicio"];
     [arrayTemp removeAllObjects];
     
+    
+    
+    
+    
 }
 
 -(UIImage*) loadImage:(NSString *) url_imagen
