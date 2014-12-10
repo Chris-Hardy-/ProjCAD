@@ -12,7 +12,8 @@
 @property (nonatomic, copy)NSString *bolsaTrabajo;
 @property (nonatomic, copy)NSString *fecPublicacion;
 @property (nonatomic, copy)NSString *lugar;
-@property (nonatomic, assign) float sueldo;
+@property (nonatomic, copy)NSString *sueldo;
 @property (nonatomic, copy)NSString *perfil;
+@property (nonatomic, copy)NSString *estado;
 
 @end

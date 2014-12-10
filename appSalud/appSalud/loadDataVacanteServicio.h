@@ -11,6 +11,8 @@
 @interface loadDataVacanteServicio : NSObject <NSXMLParserDelegate>
 @property (nonatomic) NSMutableArray *arrayVacanteServicio;
 
+-(void)cargaInicial;
+
 @end
 
 

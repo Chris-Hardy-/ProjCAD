@@ -15,6 +15,7 @@
 @synthesize lugar=_lugar;
 @synthesize sueldo=_sueldo;
 @synthesize perfil=_perfil;
+@synthesize estado=_estado;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
@@ -26,8 +27,9 @@
     self.bolsaTrabajo = [decoder decodeObjectForKey:@"bolsaTrabajo"];
     self.fecPublicacion = [decoder decodeObjectForKey:@"fecPublicacion"];
     self.lugar = [decoder decodeObjectForKey:@"lugar"];
-    self.sueldo= [decoder decodeFloatForKey:@"sueldo"];
+    self.sueldo= [decoder decodeObjectForKey:@"sueldo"];
     self.perfil = [decoder decodeObjectForKey:@"perfil"];
+    self.estado = [decoder decodeObjectForKey:@"estado"];
     
     return self;
 }
@@ -36,8 +38,9 @@
     [encoder encodeObject:self.bolsaTrabajo forKey:@"bolsaTrabajo"];
     [encoder encodeObject:self.fecPublicacion forKey:@"fecPublicacion"];
     [encoder encodeObject:self.lugar forKey:@"lugar"];
-    [encoder encodeFloat:self.sueldo forKey:@"sueldo"];
+    [encoder encodeObject:self.sueldo forKey:@"sueldo"];
     [encoder encodeObject:self.perfil forKey:@"perfil"];
+    [encoder encodeObject:self.estado forKey:@"estado"];
     }
 
 

@@ -53,6 +53,7 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     if ([elementName isEqualToString:@"BolsaTrabajoSSH"]) {
         tempVacante = [[vacante alloc]init];
+        stringTemp = [[NSString alloc] init];
     }
     
     else
@@ -85,24 +86,27 @@
         tempVacante.lugar= stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
-        
-        [self.arrayVacantes addObject:tempVacante];
-        tempVacante = [[vacante alloc]init];
-        stringTemp=@"";
-        stringBuffer=@"";
     }
     else if ([elementName isEqualToString:@"sueldo"]) {
-        tempVacante.sueldo = [stringBuffer doubleValue];
-        stringTemp=@"";
-        stringBuffer=@"";
-        
-        [self.arrayVacantes addObject:tempVacante];
-        tempVacante = [[vacante alloc]init];
+        tempVacante.sueldo = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
     }
     else if ([elementName isEqualToString:@"perfil"]) {
         tempVacante.perfil = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+        [self.arrayVacantes addObject:tempVacante];
+        tempVacante = [[vacante alloc]init];
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"estado"]) {
+        tempVacante.estado = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+        [self.arrayVacantes addObject:tempVacante];
+        tempVacante = [[vacante alloc]init];
         stringTemp=@"";
         stringBuffer=@"";
     }

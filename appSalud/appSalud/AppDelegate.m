@@ -14,6 +14,8 @@
 #import "loadDataSucursales.h"
 #import "noticia.h"
 #import "indice_consejo.h"
+#import "loadDataVacantes.h"
+#import "loadDataVacanteServicio.h"
 
 @implementation AppDelegate
 
@@ -169,7 +171,25 @@
     [userDefaults setObject:arrayData forKey:@"arrayConsejosNutricionales"];
     [arrayTemp removeAllObjects];
     
-    //CARGA DE XML COMUNICATE
+    //CARGA DE XML VACANTES
+    loadDataVacantes *loaderVacantes = [[loadDataVacantes alloc] init];
+    [loaderVacantes cargaInicial];
+    someArray = [[NSArray alloc] initWithArray:loaderVacantes.arrayVacantes];
+    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    [userDefaults setObject:arrayData forKey:@"arrayVacantes"];
+    [arrayTemp removeAllObjects];
+    
+    //CARGA DE XML VACANTES SERVICIO SOCIAL
+    loadDataVacanteServicio *loaderVacantesServicio = [[loadDataVacanteServicio alloc] init];
+    [loaderVacantesServicio cargaInicial];
+    someArray = [[NSArray alloc] initWithArray:loaderVacantesServicio.arrayVacanteServicio];
+    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    [userDefaults setObject:arrayData forKey:@"arrayVacantesServicio"];
+    [arrayTemp removeAllObjects];
+    
+    
+    
+    
     
 }
 

@@ -107,7 +107,6 @@
  */
 
 - (IBAction)mostrarTablaIndices:(id)sender {
-    NSLog(@"Ñ");
     self.TablaIndices.hidden = false;
     tableData = arrayIndices;
     [self.TablaIndices reloadData];

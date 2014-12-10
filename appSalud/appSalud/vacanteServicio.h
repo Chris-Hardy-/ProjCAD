@@ -10,7 +10,7 @@
 
 @interface vacanteServicio : NSObject <NSCoding>
 
-@property (nonatomic, copy)NSString *servicioSocial;
+@property (nonatomic, copy)NSString *nombreServicioSocial;
 @property (nonatomic, copy)NSString *periodoInicio;
 @property (nonatomic, copy)NSString *periodoFin;
 @property (nonatomic, copy)NSString *habilidades;

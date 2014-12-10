@@ -53,6 +53,7 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     if ([elementName isEqualToString:@"ServicioSocialSSH"]) {
         tempVacanteS = [[vacanteServicio alloc]init];
+        stringTemp = [[NSString alloc] init];
     }
     
     else
@@ -72,7 +73,7 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     if ([elementName isEqualToString:@"serviciosocial"]) {
-          tempVacanteS.servicioSocial = stringBuffer;
+          tempVacanteS.nombreServicioSocial = stringBuffer;
           stringTemp=@"";
           stringBuffer=@"";
     }
@@ -85,24 +86,19 @@
         tempVacanteS.periodoFin = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
-        
-        [self.arrayVacanteServicio addObject:tempVacanteS];
-        tempVacanteS = [[vacanteServicio alloc]init];
-        stringTemp=@"";
-        stringBuffer=@"";
     }
     else if ([elementName isEqualToString:@"habilidades"]) {
         tempVacanteS.habilidades = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
-        
-        [self.arrayVacanteServicio addObject:tempVacanteS];
-       tempVacanteS = [[vacanteServicio alloc]init];
-        stringTemp=@"";
-        stringBuffer=@"";
     }
     else if ([elementName isEqualToString:@"perfil"]) {
         tempVacanteS.perfil = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+        
+        [self.arrayVacanteServicio addObject:tempVacanteS];
+        tempVacanteS = [[vacanteServicio alloc]init];
         stringTemp=@"";
         stringBuffer=@"";
     }
