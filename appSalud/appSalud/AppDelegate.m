@@ -88,11 +88,6 @@
     loader=[[loadDataAcercaNosotros alloc]init];
     [loader cargaInicial];
     
-    //  CARGA DE XML SECCION ACERCA DE NOSOTROS
-//    imagen = [self loadImage:loader.urlOrganigrama];
-//    imagenData = UIImagePNGRepresentation(imagen);
-//    [userDefaults setObject:imagenData forKey:@"imagenOrganigrama"];
-    
     //CARGA ARRAY MENSAJES
     for (int i=0; i<[loader.arrayMensajes count]; i++) {
         mensajeTemp = [loader.arrayMensajes objectAtIndex:i];
