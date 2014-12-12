@@ -73,7 +73,7 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     if ([elementName isEqualToString:@"bolsatrabajo"]) {
-        tempVacante.bolsaTrabajo   = stringBuffer;
+        tempVacante.nombreBolsaTrabajo   = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
     }
@@ -94,15 +94,6 @@
     }
     else if ([elementName isEqualToString:@"perfil"]) {
         tempVacante.perfil = stringBuffer;
-        stringTemp=@"";
-        stringBuffer=@"";
-        [self.arrayVacantes addObject:tempVacante];
-        tempVacante = [[vacante alloc]init];
-        stringTemp=@"";
-        stringBuffer=@"";
-    }
-    else if ([elementName isEqualToString:@"estado"]) {
-        tempVacante.estado = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
         [self.arrayVacantes addObject:tempVacante];

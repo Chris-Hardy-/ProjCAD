@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *editPeriodoLugar;
 @property (weak, nonatomic) IBOutlet UILabel *labelHabilidadSueld;
 @property (weak, nonatomic) IBOutlet UITextField *editHabilidadesSueldo;
-@property (weak, nonatomic) IBOutlet UILabel *labelEstado;
-@property (weak, nonatomic) IBOutlet UITextField *editEstado;
 
 @property (weak, nonatomic) IBOutlet UIButton *botonServSoc;
 @property (weak, nonatomic) IBOutlet UIButton *botonOfertLab;

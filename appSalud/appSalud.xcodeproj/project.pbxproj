@@ -20,6 +20,7 @@
 		3C04EB9C19E44EFC00BBA4AD /* ViewControllerNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C04EB9B19E44EFC00BBA4AD /* ViewControllerNoticias.m */; };
 		3C09D1281A000B41007706D9 /* Actualizar.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1271A000B41007706D9 /* Actualizar.xml */; };
 		3C09D12A1A000D82007706D9 /* Sucursales.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C09D1291A000D82007706D9 /* Sucursales.xml */; };
+		3C16B6151A3A5F8C0007F333 /* ViewControllerAplicarVacante.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C16B6131A3A5F8C0007F333 /* ViewControllerAplicarVacante.m */; };
 		3C25CEEE19F958EC004F5AA0 /* loadDataSucursales.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C25CEED19F958EC004F5AA0 /* loadDataSucursales.m */; };
 		3C25CEF119F95949004F5AA0 /* sucursal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C25CEF019F95949004F5AA0 /* sucursal.m */; };
 		3C2707111A377C110062F157 /* logo58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C27070E1A377C110062F157 /* logo58x58.png */; };
@@ -134,6 +135,8 @@
 		3C04EB9B19E44EFC00BBA4AD /* ViewControllerNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNoticias.m; sourceTree = "<group>"; };
 		3C09D1271A000B41007706D9 /* Actualizar.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Actualizar.xml; sourceTree = "<group>"; };
 		3C09D1291A000D82007706D9 /* Sucursales.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sucursales.xml; sourceTree = "<group>"; };
+		3C16B6131A3A5F8C0007F333 /* ViewControllerAplicarVacante.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAplicarVacante.m; sourceTree = "<group>"; };
+		3C16B6141A3A5F8C0007F333 /* ViewControllerAplicarVacante.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAplicarVacante.h; sourceTree = "<group>"; };
 		3C25CEEC19F958EC004F5AA0 /* loadDataSucursales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadDataSucursales.h; path = appSalud/loadDataSucursales.h; sourceTree = "<group>"; };
 		3C25CEED19F958EC004F5AA0 /* loadDataSucursales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadDataSucursales.m; path = appSalud/loadDataSucursales.m; sourceTree = "<group>"; };
 		3C25CEEF19F95949004F5AA0 /* sucursal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sucursal.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 				265C82681A267922004D856A /* ViewControllerVacantes.m */,
 				265C826D1A267CA3004D856A /* ViewControllerContactanos.h */,
 				265C826E1A267CA3004D856A /* ViewControllerContactanos.m */,
+				3C16B6141A3A5F8C0007F333 /* ViewControllerAplicarVacante.h */,
+				3C16B6131A3A5F8C0007F333 /* ViewControllerAplicarVacante.m */,
 				3C358C0E1A24FD10009108CC /* Mapa */,
 				3C48E5B519A39F1A0044038B /* Images.xcassets */,
 				3C48E5DF19A3D57D0044038B /* Library */,
@@ -663,6 +668,7 @@
 				266A85A119BBC646000390D9 /* ViewControllerMuestraNoticias.m in Sources */,
 				3C8B286619AF8EB200F632BF /* loadDataAcercaNosotros.m in Sources */,
 				26FDC4EA1A29144D00A8EF6A /* vacanteServicio.m in Sources */,
+				3C16B6151A3A5F8C0007F333 /* ViewControllerAplicarVacante.m in Sources */,
 				3C6A4FD919EDC2AD00863BA7 /* ViewControllerCalendario.m in Sources */,
 				3CD5706219F6AA6200A82125 /* DSLCalendarDayCalloutView.m in Sources */,
 				265C826F1A267CA3004D856A /* ViewControllerContactanos.m in Sources */,

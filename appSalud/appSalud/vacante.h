@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface vacante : NSObject <NSCoding>
-@property (nonatomic, copy)NSString *bolsaTrabajo;
+@property (nonatomic, copy)NSString *nombreBolsaTrabajo;
 @property (nonatomic, copy)NSString *fecPublicacion;
 @property (nonatomic, copy)NSString *lugar;
 @property (nonatomic, copy)NSString *sueldo;
 @property (nonatomic, copy)NSString *perfil;
-@property (nonatomic, copy)NSString *estado;
 
 @end

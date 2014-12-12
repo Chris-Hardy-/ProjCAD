@@ -40,14 +40,14 @@
 {
     [super viewDidLoad];
     
- 
-    
-    
     UIImage *menu = [UIImage imageNamed:@"menu.png"];
     
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
                                    initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = flipButton;
+    
+    self.title = @"Vacantes";
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];//despliega a menu principal
     
     tableData = [[NSArray alloc] init];
     arrayVacantes = [[NSArray alloc] init];
@@ -65,9 +65,6 @@
     
     self.tablaVacantes.delegate = self;
     self.tablaVacantes.dataSource = self;
-    
-    self.title = @"Vacantes";
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];//despliega a menu principal
     
     self.tablaVacantes.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     
@@ -130,7 +127,7 @@
         }
     if (self.botonOfertLab.selected) {
         tempVacante = [tableData objectAtIndex:indexPath.row];
-        cell.textLabel.text = tempVacante.bolsaTrabajo;
+        cell.textLabel.text = tempVacante.nombreBolsaTrabajo;
         return cell;
     }
     else if (self.botonServSoc.selected){
@@ -153,16 +150,17 @@
         self.editPeriodoLugar.text = muestraVacanteServicio.periodoFin;
         self.editHabilidadesSueldo.text = muestraVacanteServicio.habilidades;
         self.botonAplicar.hidden = false;
+        [userDefaults setObject:muestraVacanteServicio.nombreServicioSocial forKey:@"nombreVacanteAplicacion"];
     }
     else if (self.botonOfertLab.selected) {
         muestraVacante = [arrayVacantes objectAtIndex:indexPath.row];
-        self.editTitulo.text = muestraVacante.bolsaTrabajo;
+        self.editTitulo.text = muestraVacante.nombreBolsaTrabajo;
         self.editPerfil.text = muestraVacante.perfil;
         self.editPublicacionInicio.text = muestraVacante.fecPublicacion;
         self.editPeriodoLugar.text = muestraVacante.lugar;
         self.editHabilidadesSueldo.text = muestraVacante.sueldo;
-        self.editEstado.text = muestraVacante.estado;
         self.botonAplicar.hidden = false;
+        [userDefaults setObject:muestraVacante.nombreBolsaTrabajo forKey:@"nombreVacanteAplicacion"];
     }
     
     self.tablaVacantes.hidden = true;
@@ -175,8 +173,6 @@
     self.labelFechaPeriodo.text = @"Periodo Inicio";
     self.labelPeriodoLugar.text = @"Periodo Fin";
     self.labelHabilidadSueld.text = @"Habilidades";
-    self.labelEstado.hidden = true;
-    self.editEstado.hidden = true;
     tableData=arrayVacantesServicio;
     [self.tablaVacantes reloadData];
     
@@ -185,7 +181,6 @@
     self.editPublicacionInicio.text = @"";
     self.editPeriodoLugar.text = @"";
     self.editHabilidadesSueldo.text = @"";
-    self.editEstado.text = @"";
     
     self.botonAplicar.hidden = true;
 }
@@ -196,8 +191,6 @@
     self.labelFechaPeriodo.text = @"Fecha Publicación";
     self.labelPeriodoLugar.text = @"Lugar";
     self.labelHabilidadSueld.text = @"Sueldo";
-    self.labelEstado.hidden = false;
-    self.editEstado.hidden = false;
     tableData = arrayVacantes;
     [self.tablaVacantes reloadData];
     
@@ -206,7 +199,6 @@
     self.editPublicacionInicio.text = @"";
     self.editPeriodoLugar.text = @"";
     self.editHabilidadesSueldo.text = @"";
-    self.editEstado.text = @"";
     
     self.botonAplicar.hidden = true;
     
