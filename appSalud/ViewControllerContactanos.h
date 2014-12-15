@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ViewControllerContactanos : UIViewController
+@interface ViewControllerContactanos : UIViewController<UITextViewDelegate, MFMailComposeViewControllerDelegate,UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *editNombre;
+@property (weak, nonatomic) IBOutlet UITextField *editCorreoElectronico;
+@property (weak, nonatomic) IBOutlet UITextView *textFieldQueja;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewContenido;
 
 @end

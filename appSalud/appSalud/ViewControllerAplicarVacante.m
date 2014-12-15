@@ -78,7 +78,6 @@
 
 - (void)viewDidLayoutSubviews {
     self.scrollViewContenido.contentSize = CGSizeMake([UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height+100);
-    
 }
 
 /*

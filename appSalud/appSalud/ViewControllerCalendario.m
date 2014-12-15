@@ -9,8 +9,12 @@
 #import "DSLCalendarView.h"
 #import "ViewControllerCalendario.h"
 #import "SWRevealViewController.h"
+#import "evento.h"
 
-@interface ViewControllerCalendario () <DSLCalendarViewDelegate>
+@interface ViewControllerCalendario () <DSLCalendarViewDelegate>{
+    NSArray *tableData;
+    evento *tempEvento;
+}
 
 @property (nonatomic, weak) IBOutlet DSLCalendarView *calendarView;
 
@@ -38,6 +42,36 @@
     
     self.calendarView.delegate = self;
     self.calendarView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
+    
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] init];
+    NSData *arrayData = [userDefaults objectForKey:@"arrayEventos"];
+    tableData = [NSKeyedUnarchiver unarchiveObjectWithData:arrayData];
+    
+    self.tableEventos.dataSource = self;
+    self.tableEventos.delegate = self;
+    
+    
+    
+
+//    NSDateComponents *startDate = [[NSDateComponents alloc] init];
+//    NSDateComponents *endDate = [[NSDateComponents alloc] init];
+//    
+//    startDate.year=2014;
+//    startDate.month=12;
+//    startDate.day=12;
+//    
+//    endDate.year=2014;
+//    endDate.month=12;
+//    endDate.day=13;
+    
+//    NSString *dateString = @"03-Sep-11";
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    dateFormatter.dateFormat = @"dd-MMM-yy";
+//    NSDate *date = [dateFormatter dateFromString:dateString];
+//    
+//    DSLCalendarRange *selected = [[DSLCalendarRange alloc] initWithStartDay:date endDay:date];
+//    
+//    [self.calendarView setSelectedRange: selected];
 }
 
 - (void)viewDidUnload
@@ -101,5 +135,58 @@
 - (BOOL)day:(NSDateComponents*)day1 isBeforeDay:(NSDateComponents*)day2 {
     return ([day1.date compare:day2.date] == NSOrderedAscending);
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tableData count];
+    
+    //Funcion para ocultar la tableviewVacantes dando click en la pantalla
+}
+
+#pragma mark TableViewControlls
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celdaEventos"];
+    tempEvento = [tableData objectAtIndex:indexPath.row];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"celdaEventos"];
+    }
+        cell.textLabel.text = tempEvento.titulo;
+    cell.detailTextLabel.text = tempEvento.descripcion;
+    
+        return cell;
+    
+    return nil;
+    
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (self.botonServSoc.selected) {
+//        muestraVacanteServicio = [arrayVacantesServicio objectAtIndex:indexPath.row];
+//        self.editTitulo.text = muestraVacanteServicio.nombreServicioSocial;
+//        self.editPerfil.text = muestraVacanteServicio.perfil;
+//        self.editPublicacionInicio.text = muestraVacanteServicio.periodoInicio;
+//        self.editPeriodoLugar.text = muestraVacanteServicio.periodoFin;
+//        self.editHabilidadesSueldo.text = muestraVacanteServicio.habilidades;
+//        self.botonAplicar.hidden = false;
+//        [userDefaults setObject:muestraVacanteServicio.nombreServicioSocial forKey:@"nombreVacanteAplicacion"];
+//    }
+//    else if (self.botonOfertLab.selected) {
+//        muestraVacante = [arrayVacantes objectAtIndex:indexPath.row];
+//        self.editTitulo.text = muestraVacante.nombreBolsaTrabajo;
+//        self.editPerfil.text = muestraVacante.perfil;
+//        self.editPublicacionInicio.text = muestraVacante.fecPublicacion;
+//        self.editPeriodoLugar.text = muestraVacante.lugar;
+//        self.editHabilidadesSueldo.text = muestraVacante.sueldo;
+//        self.botonAplicar.hidden = false;
+//        [userDefaults setObject:muestraVacante.nombreBolsaTrabajo forKey:@"nombreVacanteAplicacion"];
+//    }
+//    
+//    self.tablaVacantes.hidden = true;
+//}
+
+
 
 @end

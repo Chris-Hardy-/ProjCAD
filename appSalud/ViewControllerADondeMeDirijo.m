@@ -176,17 +176,32 @@
     static NSString *simpleTableIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    //    if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     UISwitch *switchview = [[UISwitch alloc] initWithFrame:CGRectZero];
+    switch (indexPath.row) {
+        case 0:
+            [switchview setOn:hemorragia animated:NO];
+            break;
+        case 1:
+            [switchview setOn:quemadura animated:NO];
+            break;
+        case 2:
+            [switchview setOn:alergia animated:NO];
+            break;
+        case 3:
+            [switchview setOn:fractura animated:NO];
+            break;
+        case 4:
+            [switchview setOn:trasladar animated:NO];
+            break;
+    }
     cell.accessoryView = switchview;
     [switchview addTarget:self action:@selector(updateSwitchAtIndexPath:)
          forControlEvents:UIControlEventValueChanged];
     [switchview setTag:indexPath.row];
-    //    }
     cell.textLabel.text = [_tableData objectAtIndex:indexPath.row];
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

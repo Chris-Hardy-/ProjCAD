@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso8859-1"?>
+<eventos>
+    <evento>
+        <titulo>Informe Gov</titulo>
+        <descripcion>XVII Informe de Secretaria</descripcion>
+        <fecha>2014-12-11 14:59</fecha>
+    </evento>
+    <evento>
+        <titulo>Aplicación de vacunas</titulo>
+        <descripcion>Vacunas Anti-gripales</descripcion>
+        <fecha>2014-05-11 12:59</fecha>
+    </evento>
+    <evento>
+        <titulo>Desparacitación</titulo>
+        <descripcion>PAstillas para desparacitar</descripcion>
+        <fecha>2014-09-11 11:59</fecha>
+    </evento>
+    <evento>
+        <titulo>Mensaje Navideño</titulo>
+        <descripcion>Mensaje del Secretario</descripcion>
+        <fecha>2014-12-24 22:00</fecha>
+    </evento>
+    <evento>
+        <titulo>Mensaje Año Nuevo</titulo>
+        <descripcion>Mensaje del Secretario</descripcion>
+        <fecha>2014-12-31 23:59</fecha>
+    </evento>
+</eventos>

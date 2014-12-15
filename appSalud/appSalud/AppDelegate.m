@@ -16,6 +16,8 @@
 #import "indice_consejo.h"
 #import "loadDataVacantes.h"
 #import "loadDataVacanteServicio.h"
+#import "loadDataEncuestas.h"
+#import "loadDataCalendario.h"
 
 @implementation AppDelegate
 
@@ -182,10 +184,21 @@
     [userDefaults setObject:arrayData forKey:@"arrayVacantesServicio"];
     [arrayTemp removeAllObjects];
     
+    //CARGA XML ENCUESTAS
+    loadDataEncuestas *loaderEncuestas = [[loadDataEncuestas alloc] init];
+    [loaderEncuestas cargaInicial];
+    someArray = [[NSArray alloc] initWithArray:loaderEncuestas.arrayEncuestas];
+    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    [userDefaults setObject:arrayData forKey:@"arrayEncuestas"];
+    [arrayTemp removeAllObjects];
     
-    
-    
-    
+    //CARGA XML CALENDARIO
+    loadDataCalendario *loaderCalendario = [[loadDataCalendario alloc] init];
+    [loaderCalendario cargaInicial];
+    someArray = [[NSArray alloc] initWithArray:loaderCalendario.arrayEventos];
+    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    [userDefaults setObject:arrayData forKey:@"arrayEventos"];
+    [arrayTemp removeAllObjects];
 }
 
 -(UIImage*) loadImage:(NSString *) url_imagen
