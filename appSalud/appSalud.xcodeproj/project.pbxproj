@@ -70,11 +70,12 @@
 		3C8B286819AF918100F632BF /* Calendario.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C8B286719AF918100F632BF /* Calendario.xml */; };
 		3C8B286E19AFB6FA00F632BF /* mensaje.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B286D19AFB6FA00F632BF /* mensaje.m */; };
 		3C8B287119AFBA0500F632BF /* galeriaImagenes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B287019AFBA0500F632BF /* galeriaImagenes.m */; };
+		3C8BCA821A3F78C500E61D64 /* backgroundTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BCA811A3F78C500E61D64 /* backgroundTexture.png */; };
 		3C9716A91A264BDF0065775A /* ViewControllerADondeMeDirijo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9716A81A264BDF0065775A /* ViewControllerADondeMeDirijo.m */; };
 		3CB81C3D1A02905A00AB7E58 /* loadDataActualizar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB81C3C1A02905A00AB7E58 /* loadDataActualizar.m */; };
 		3CB81C401A02995100AB7E58 /* launchImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C3E1A02995100AB7E58 /* launchImage2.png */; };
 		3CB81C411A02995100AB7E58 /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C3F1A02995100AB7E58 /* launchImage.png */; };
-		3CB81C451A029B4200AB7E58 /* backgroundTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C441A029B4200AB7E58 /* backgroundTexture.png */; };
+		3CB81C451A029B4200AB7E58 /* backgroundTexture111.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C441A029B4200AB7E58 /* backgroundTexture111.png */; };
 		3CCB011819BF6332002FB971 /* Noticias.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3CCB011719BF6332002FB971 /* Noticias.xml */; };
 		3CCB011B19BF63BE002FB971 /* loadDataNoticias.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB011A19BF63BE002FB971 /* loadDataNoticias.m */; };
 		3CCB011E19BF6852002FB971 /* noticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB011D19BF6852002FB971 /* noticia.m */; };
@@ -212,13 +213,14 @@
 		3C8B286D19AFB6FA00F632BF /* mensaje.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mensaje.m; sourceTree = "<group>"; };
 		3C8B286F19AFBA0500F632BF /* galeriaImagenes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galeriaImagenes.h; sourceTree = "<group>"; };
 		3C8B287019AFBA0500F632BF /* galeriaImagenes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galeriaImagenes.m; sourceTree = "<group>"; };
+		3C8BCA811A3F78C500E61D64 /* backgroundTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTexture.png; sourceTree = "<group>"; };
 		3C9716A71A264BDF0065775A /* ViewControllerADondeMeDirijo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerADondeMeDirijo.h; path = ../ViewControllerADondeMeDirijo.h; sourceTree = "<group>"; };
 		3C9716A81A264BDF0065775A /* ViewControllerADondeMeDirijo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerADondeMeDirijo.m; path = ../ViewControllerADondeMeDirijo.m; sourceTree = "<group>"; };
 		3CB81C3B1A02905A00AB7E58 /* loadDataActualizar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadDataActualizar.h; sourceTree = "<group>"; };
 		3CB81C3C1A02905A00AB7E58 /* loadDataActualizar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadDataActualizar.m; sourceTree = "<group>"; };
 		3CB81C3E1A02995100AB7E58 /* launchImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage2.png; sourceTree = "<group>"; };
 		3CB81C3F1A02995100AB7E58 /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
-		3CB81C441A029B4200AB7E58 /* backgroundTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTexture.png; sourceTree = "<group>"; };
+		3CB81C441A029B4200AB7E58 /* backgroundTexture111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTexture111.png; sourceTree = "<group>"; };
 		3CCB011719BF6332002FB971 /* Noticias.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Noticias.xml; sourceTree = "<group>"; };
 		3CCB011919BF63BE002FB971 /* loadDataNoticias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadDataNoticias.h; sourceTree = "<group>"; };
 		3CCB011A19BF63BE002FB971 /* loadDataNoticias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadDataNoticias.m; sourceTree = "<group>"; };
@@ -420,7 +422,8 @@
 				3C277A6319ACF96C00D9EC6C /* defaultImage.png */,
 				3CB81C3E1A02995100AB7E58 /* launchImage2.png */,
 				3CB81C3F1A02995100AB7E58 /* launchImage.png */,
-				3CB81C441A029B4200AB7E58 /* backgroundTexture.png */,
+				3CB81C441A029B4200AB7E58 /* backgroundTexture111.png */,
+				3C8BCA811A3F78C500E61D64 /* backgroundTexture.png */,
 				3C358C0F1A25273B009108CC /* centroSaludAnnot.png */,
 				3C358C111A25273B009108CC /* hospitalAnnot.png */,
 				3C358C171A2529CA009108CC /* oficinaAnnot.png */,
@@ -598,7 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26BBCA861A1E8A5400AF3196 /* Antipasto_regular.otf in Resources */,
-				3CB81C451A029B4200AB7E58 /* backgroundTexture.png in Resources */,
+				3CB81C451A029B4200AB7E58 /* backgroundTexture111.png in Resources */,
 				3C277A5D19ACD51900D9EC6C /* logoGoogleNormal@2x.png in Resources */,
 				3CD5707519F6AA6200A82125 /* DSLCalendarDaySelection-right@2x.png in Resources */,
 				3CD5706619F6AA6200A82125 /* DSLCalendarMonthSelectorView.xib in Resources */,
@@ -623,6 +626,7 @@
 				3CD5706319F6AA6200A82125 /* DSLCalendarDayCalloutView.xib in Resources */,
 				3C358C131A25273B009108CC /* centroSaludAnnot.png in Resources */,
 				3CD5707419F6AA6200A82125 /* DSLCalendarDaySelection-right.png in Resources */,
+				3C8BCA821A3F78C500E61D64 /* backgroundTexture.png in Resources */,
 				3C277A6019ACF15A00D9EC6C /* logoTwitter.png in Resources */,
 				3CD5707619F6AA6200A82125 /* DSLCalendarDaySelection.png in Resources */,
 				3C48E5DE19A3A7940044038B /* menu.png in Resources */,
