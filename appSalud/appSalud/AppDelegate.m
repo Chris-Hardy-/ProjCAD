@@ -19,10 +19,22 @@
 #import "loadDataEncuestas.h"
 #import "loadDataCalendario.h"
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    NSUserDefaults *userDefaults;
+    UIImage *imagen;
+    NSData *imagenData;
+    NSMutableArray *arrayTemp;
+    mensaje *mensajeTemp;
+    galeriaImagenes *galeriaTemp;
+    noticia *noticiaTemp;
+    NSArray *someArray;
+    NSData *arrayData;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    arrayTemp = [[NSMutableArray alloc] init];
     // Override point for customization after application launch.
     
     // Change the background color of navigation bar
@@ -77,13 +89,15 @@
 
 -(void)cargaInicial{
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    UIImage *imagen;
-    NSData *imagenData;
-    NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
-    mensaje *mensajeTemp;
-    galeriaImagenes *galeriaTemp;
-    noticia *noticiaTemp;
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    UIImage *imagen;
+//    NSData *imagenData;
+//    NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
+//    mensaje *mensajeTemp;
+//    galeriaImagenes *galeriaTemp;
+//    noticia *noticiaTemp;
+//    NSArray *someArray;
+//    NSData *arrayData;
     
     
     loadDataAcercaNosotros *loader;
@@ -98,8 +112,8 @@
         mensajeTemp.imagenPerfil=imagenData;
         [arrayTemp addObject:mensajeTemp];
     }
-    NSArray *someArray = [[NSArray alloc] initWithArray:arrayTemp];
-    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    someArray = [[NSArray alloc] initWithArray:arrayTemp];
+    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
     [userDefaults setObject:arrayData forKey:@"arrayMensajes"];
     [arrayTemp removeAllObjects];
     

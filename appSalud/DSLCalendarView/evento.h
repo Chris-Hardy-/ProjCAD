@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy) NSString *titulo;
 @property (nonatomic, copy) NSString *descripcion;
-@property (nonatomic, assign) NSDate *fecha;
+@property (nonatomic, copy) NSString *fecha;
 
 @end

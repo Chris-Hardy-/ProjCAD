@@ -54,7 +54,7 @@
 //    
 //    [parser parse];
     
-    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenUnidades.php";
+    NSString *path = @"http://192.168.1.159:8888/ConfigAppiOS/obtenUnidades.php";
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [NSURL URLWithString:path ];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];

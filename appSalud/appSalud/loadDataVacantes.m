@@ -33,7 +33,7 @@
 
 - (void)parseXML{
     
-    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenBolsaTrabajo.php";
+    NSString *path = @"http://192.168.1.159:8888/ConfigAppiOS/obtenBolsaTrabajo.php";
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [NSURL URLWithString:path ];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
@@ -72,8 +72,13 @@
 
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:@"bolsatrabajo"]) {
-        tempVacante.nombreBolsaTrabajo   = stringBuffer;
+    if ([elementName isEqualToString:@"idbolsatrabajo"]) {
+        tempVacante.idBolsaTrabajo = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"bolsatrabajo"]) {
+        tempVacante.nombreBolsaTrabajo = stringBuffer;
         stringTemp=@"";
         stringBuffer=@"";
     }

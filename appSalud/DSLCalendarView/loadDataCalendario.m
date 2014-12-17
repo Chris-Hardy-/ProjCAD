@@ -15,11 +15,10 @@
     NSXMLParser *parser;
     NSString *stringBuffer;
     NSString *stringTemp;
-    //    NSMutableArray *arrayVacanteServicio;
     
     evento *tempEvento;
-    NSDateFormatter *dateFormatter;
     
+    NSDateFormatter *dateFormatter;
     NSDate *capturedStartDate;
 }
 
@@ -97,11 +96,9 @@
     }
     
     else if ([elementName isEqualToString:@"fecha"]) {
-        capturedStartDate = [dateFormatter dateFromString: stringBuffer];
-        NSLog(@"Captured Date %@", [capturedStartDate description]);
-        tempEvento.fecha=capturedStartDate;
+        tempEvento.fecha=stringBuffer;
         [self.arrayEventos addObject:tempEvento];
-        capturedStartDate = nil;
+        tempEvento = [[evento alloc] init];
         stringTemp=@"";
         stringBuffer=@"";
     }

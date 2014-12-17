@@ -15,6 +15,7 @@
 @synthesize lugar=_lugar;
 @synthesize sueldo=_sueldo;
 @synthesize perfil=_perfil;
+@synthesize idBolsaTrabajo=_idBolsaTrabajo;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
@@ -28,6 +29,7 @@
     self.lugar = [decoder decodeObjectForKey:@"lugar"];
     self.sueldo= [decoder decodeObjectForKey:@"sueldo"];
     self.perfil = [decoder decodeObjectForKey:@"perfil"];
+    self.idBolsaTrabajo = [decoder decodeObjectForKey:@"idBolsaTrabajo"];
     
     return self;
 }
@@ -38,6 +40,7 @@
     [encoder encodeObject:self.lugar forKey:@"lugar"];
     [encoder encodeObject:self.sueldo forKey:@"sueldo"];
     [encoder encodeObject:self.perfil forKey:@"perfil"];
+    [encoder encodeObject:self.idBolsaTrabajo forKey:@"idBolsaTrabajo"];
     }
 
 

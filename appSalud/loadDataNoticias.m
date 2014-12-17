@@ -62,7 +62,7 @@
 //    stringTemp = [[NSString alloc] init];
 //    [parser parse];
     
-    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenNoticiasIndicadoresConsejos.php";
+    NSString *path = @"http://192.168.1.159:8888/ConfigAppiOS/obtenNoticiasIndicadoresConsejos.php";
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [NSURL URLWithString:path ];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
@@ -117,18 +117,18 @@
         stringTemp=@"";
         stringBuffer=@"";
         
-        [self.arrayNoticias addObject:tempNoticia];
-        tempNoticia = [[noticia alloc]init];
-        stringTemp=@"";
-        stringBuffer=@"";
-    }
-    else if ([elementName isEqualToString:@"urlNoticia"]) {
-        tempNoticia.urlNoticia = stringBuffer;
-        
 //        [self.arrayNoticias addObject:tempNoticia];
 //        tempNoticia = [[noticia alloc]init];
 //        stringTemp=@"";
 //        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"URLNoticia"]) {
+        tempNoticia.urlNoticia = stringBuffer;
+        
+        [self.arrayNoticias addObject:tempNoticia];
+        tempNoticia = [[noticia alloc]init];
+        stringTemp=@"";
+        stringBuffer=@"";
     }
     else if ([elementName isEqualToString:@"tituloIndicador"]) {
         tempIndiceConsejo.titulo = stringBuffer;

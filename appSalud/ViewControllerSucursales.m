@@ -51,7 +51,7 @@
 {
     [super viewDidLoad];
     
-    self.title=@"Calendario";
+    self.title=@"Sucursales";
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     

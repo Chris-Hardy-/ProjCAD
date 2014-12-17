@@ -34,7 +34,7 @@
 
 - (void)parseXML{
     
-    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenServicioSocial.php";
+    NSString *path = @"http://192.168.1.159:8888/ConfigAppiOS/obtenServicioSocial.php";
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [NSURL URLWithString:path ];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
@@ -72,7 +72,12 @@
 
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:@"serviciosocial"]) {
+    if ([elementName isEqualToString:@"idserviciosocial"]) {
+        tempVacanteS.idVacanteServicio = stringBuffer;
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    else if ([elementName isEqualToString:@"serviciosocial"]) {
           tempVacanteS.nombreServicioSocial = stringBuffer;
           stringTemp=@"";
           stringBuffer=@"";

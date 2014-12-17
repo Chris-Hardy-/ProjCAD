@@ -23,6 +23,7 @@
     CLLocationManager *locationManager;
     CLLocationCoordinate2D ubicacionActual;
     UIAlertView *message;
+    NSString *tempLlamar;
 }
 
 @end
@@ -59,6 +60,8 @@
     
     _pickerData = @[@"36",@"36.2",@"36.4",@"36.6",@"36.8",@"37",@"37.5",@"37.7",@"38",@"38.2",@"38.4",@"38.6",@"38.8",@"39",@"39.2",@"39.4",@"39.6",@"39.8",@"40"];
     _tableData = @[@"Hemorragia",@"Quemadura", @"Alergias severas", @"Fractura", @"¿Se puede trasladar?"];
+    
+    temp = 36.6;
     
     self.pickerTemperatura.delegate = self;
     self.pickerTemperatura.dataSource = self;
@@ -99,6 +102,8 @@
     NSTimer *aTimer = [NSTimer timerWithTimeInterval:(3.0) target:self selector:@selector(timerFired:) userInfo:nil repeats:NO];
     NSRunLoop *runner = [NSRunLoop currentRunLoop];
     [runner addTimer:aTimer forMode: NSDefaultRunLoopMode];
+    
+    tempLlamar = [[NSString alloc] init];
     
     
 }
@@ -270,6 +275,8 @@
         [message show];;
     }
     else if (nacido && temp>=36.5){
+        [self performSegueWithIdentifier:@"muestraConsejo" sender:self];
+        
         NSLog(@"Consejos");
     }
     else if (nino && temp==38){
@@ -287,6 +294,8 @@
                                   stringByReplacingOccurrencesOfString:@")" withString:@""];
         sucursalCercana.telefono=[sucursalCercana.telefono
                                   stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        
+        tempLlamar = [NSString stringWithFormat:@"tel:%@", sucursalCercana.telefono];
         [mensajeLlamar show];
     }
     else if (nino && temp>=38.5){
@@ -300,6 +309,7 @@
     }
     else if (nino && hemorragia){
         NSLog(@"Consejo");
+        [self performSegueWithIdentifier:@"muestraConsejo" sender:self];
     }
     else if (nino && ( fractura || quemadura || alergia)){
         message = [[UIAlertView alloc] initWithTitle:@"Emergencia"
@@ -312,6 +322,7 @@
     }
     else if (adulto && 37.5<temp && temp<39){
         NSLog(@"Consejos");
+        [self performSegueWithIdentifier:@"muestraConsejo" sender:self];
     }
     else if (adulto && temp>=39 && trasladar){
         message = [[UIAlertView alloc] initWithTitle:@"Emergencia"
@@ -324,6 +335,16 @@
     }
     else if (adulto && temp>=39 && !trasladar){
         NSLog(@"Llamar 066");
+        
+        UIAlertView *mensajeLlamar =[[UIAlertView alloc] initWithTitle:@"Precaución"
+                                                               message:[NSString stringWithFormat:@"Debes de llamar al 066 para pedir auxilio"]
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Llamar"
+                                                     otherButtonTitles:nil];
+        
+        tempLlamar = @"tel:066";
+        [mensajeLlamar show];
+
     }
     else if (adulto && (hemorragia || fractura || quemadura || alergia) && trasladar){
         message = [[UIAlertView alloc] initWithTitle:@"Emergencia"
@@ -336,6 +357,15 @@
     }
     else if (adulto && (hemorragia || fractura || quemadura || alergia) && !trasladar){
         NSLog(@"Llamar 066");
+        
+        UIAlertView *mensajeLlamar =[[UIAlertView alloc] initWithTitle:@"Precaución"
+                                                               message:[NSString stringWithFormat:@"Debes de llamar al 066 para pedir auxilio"]
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Llamar"
+                                                     otherButtonTitles:nil];
+        
+        tempLlamar = @"tel:066";
+        [mensajeLlamar show];
     }
     else{
         NSLog(@"NADA");
@@ -411,8 +441,8 @@
             [item openInMapsWithLaunchOptions:nil];
         } else if (buttonIndex==1) {
             //Google Maps
-            //construct a URL using the comgooglemaps schema
-            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",rdOfficeLocation.latitude,rdOfficeLocation.longitude]];
+            
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?daddr=%f,%f&directionsmode=driving&zoom=17",sucursalCercana.latitud,sucursalCercana.longitud]];
             if (![[UIApplication sharedApplication] canOpenURL:url]) {
                 UIAlertView *messageError = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                        message:@"No se encontro la app Google Maps instalada."
@@ -429,7 +459,7 @@
         }
     }
     else if ([alertView.title isEqualToString:@"Precaución"]){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sucursalCercana.telefono]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:tempLlamar]];
     }
 }
 

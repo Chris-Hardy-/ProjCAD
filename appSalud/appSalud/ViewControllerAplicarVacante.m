@@ -8,11 +8,16 @@
 
 #import "ViewControllerAplicarVacante.h"
 #import "SWRevealViewController.h"
+#import "vacante.h"
+#import "vacanteServicio.h"
 
 @interface ViewControllerAplicarVacante (){
     NSArray *tableData;
     NSString *nombrePuesto;
     NSUserDefaults *userDefaults;
+    vacante *tempVacante;
+    vacanteServicio *tempVacanteSS;
+    NSString *genero;
 }
 
 @end
@@ -35,15 +40,15 @@
     // Do any additional setup after loading the view.
     
     //Setup de navegacion
-    UIImage *menu = [UIImage imageNamed:@"menu.png"];
-    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
-                                   initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
-    self.navigationItem.leftBarButtonItem = flipButton;
+    //    UIImage *menu = [UIImage imageNamed:@"menu.png"];
+    //    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
+    //                                   initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    //    self.navigationItem.leftBarButtonItem = flipButton;
     self.title = @"Aplicar para Vacante";
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];//despliega a menu principal
+    //    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];//despliega a menu principal
     
     //Setup de Tabla
-    tableData = [NSArray arrayWithObjects: @"Preparatoria",@"Bachillerato",@"Licenciatura",@"Ingeniería",@"Maestría",@"Doctorado",nil];
+    tableData = [NSArray arrayWithObjects: @"Preparatoria",@"Bachillerato",@"Licenciatura",@"Ingenieria",@"Maestria",@"Doctorado",nil];
     self.tablaGradoEstudios.delegate = self;
     self.tablaGradoEstudios.dataSource = self;
     self.tablaGradoEstudios.hidden=true;
@@ -58,10 +63,25 @@
     self.tablaGradoEstudios.delegate = self;
     self.editNombre.delegate = self;
     
+    NSData *tempData;
+    
     
     userDefaults = [NSUserDefaults standardUserDefaults];
+    tempVacante = [[vacante alloc] init];
+    tempVacanteSS = [[vacanteServicio alloc] init];
     
-    nombrePuesto = [NSString stringWithFormat:@"%@", [userDefaults objectForKey:@"nombreVacanteAplicacion"]];
+    
+    if ([@"SS" isEqualToString:[NSString stringWithFormat:@"%@", [userDefaults objectForKey:@"tipoVacante"]]]) {
+        tempData = [userDefaults objectForKey:@"VacanteAplicacion"];
+        tempVacanteSS = [NSKeyedUnarchiver unarchiveObjectWithData:tempData];
+        nombrePuesto = tempVacanteSS.nombreServicioSocial;
+    }
+    else if ([@"VL" isEqualToString:[NSString stringWithFormat:@"%@", [userDefaults objectForKey:@"tipoVacante"]]]) {
+        tempData = [userDefaults objectForKey:@"VacanteAplicacion"];
+        tempVacante = [NSKeyedUnarchiver unarchiveObjectWithData:tempData];
+        nombrePuesto = tempVacante.nombreBolsaTrabajo;
+    }
+    
     self.editNombreVacante.text = nombrePuesto;
     
     
@@ -81,15 +101,15 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - Tabla
 
@@ -143,70 +163,74 @@
 - (IBAction)butonHombre:(id)sender {
     self.botonHombre.selected = true;
     self.botonMujer.selected = false;
+    genero=@"M";
 }
 - (IBAction)butonMujer:(id)sender {
     self.botonHombre.selected = false;
     self.botonMujer.selected = true;
+    genero=@"F";
 }
 
 - (IBAction)botonEnviarDatos:(id)sender {
+    
+    
+    
     if ([self.editNombre.text isEqualToString:@""] || self.botonMujer.selected == false || self.botonHombre.selected == false || [self.editEdad.text isEqualToString:@""] || [self.editGradoEstudios.text isEqualToString:@""] || [self.editCarrera.text isEqualToString:@""] || [self.editTelefono.text isEqualToString:@""] || [self.editCorreo.text isEqualToString:@""]) {
-        NSString *emailTitle = [NSString stringWithFormat:@"Aplicacion para el puesto de %@", nombrePuesto];
-        NSString *messageBody = [NSString stringWithFormat:@"Nombre: %@ \n\nEdad: %@\n\nUltimo Grado de Estudio: %@ \n\nCarrera: %@\n\nCorreo de Contacto: %@\n\nTelefono de Contacto: %@", self.editNombre.text, self.editEdad.text, self.editGradoEstudios.text, self.editCarrera.text, self.editCorreo.text, self.editTelefono.text];
-        NSArray *toRecipents = [NSArray arrayWithObject:@"hardy.chris.91@icloud.com"];
-        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-        mc.mailComposeDelegate = self;
-        [mc setSubject:emailTitle];
-        [mc setMessageBody:messageBody isHTML:NO];
-        [mc setToRecipients:toRecipents];
-        // Present mail view controller on screen
-        [self presentViewController:mc animated:YES completion:NULL];
+    
+        NSString *myRequestString;
+        
+        if ([@"SS" isEqualToString:[NSString stringWithFormat:@"%@", [userDefaults objectForKey:@"tipoVacante"]]]) {
+            myRequestString = [[NSString alloc] initWithFormat:@"http://192.168.1.159:8888/ConfigAppiOS/procesaVacante.php?nombre=%@&tel=%@&correo=%@&carrera=%@&genero=%@&edad=%@&ultimogradoe=%@&ssobt=%@&idssobt=%i",self.editNombre.text, self.editTelefono.text, self.editCorreo.text, self.editCarrera.text, genero, self.editEdad.text, self.editGradoEstudios.text, @"SS",[tempVacanteSS.idVacanteServicio intValue]];
+        }
+        else if ([@"VL" isEqualToString:[NSString stringWithFormat:@"%@", [userDefaults objectForKey:@"tipoVacante"]]]) {
+            myRequestString = [[NSString alloc] initWithFormat:@"http://192.168.1.159:8888/ConfigAppiOS/procesaVacante.php?nombre=%@&tel=%@&correo=%@&carrera=%@&genero=%@&edad=%@&ultimogradoe=%@&ssobt=%@&idssobt=%i",self.editNombre.text, self.editTelefono.text, self.editCorreo.text, self.editCarrera.text, genero, self.editEdad.text, self.editGradoEstudios.text, @"BT",[tempVacante.idBolsaTrabajo intValue]];
+        }
+        
+       myRequestString=[myRequestString
+                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+        NSURL *url = [[NSURL alloc] init];
+        url = [NSURL URLWithString:myRequestString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            if (!error) {
+                NSLog(@"GET REALIZADO");
+                UIAlertView *message;
+                message = [[UIAlertView alloc] initWithTitle:@"Exito"
+                                                     message:@"Los datos fueron envidos correctamente"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Ok"
+                                           otherButtonTitles:nil];
+                [message show];            }
+            else
+                NSLog(@"%@", error);
+        }];
+        
     }
-    else
-    {
+    
+    else {
         UIAlertView *message;
         message = [[UIAlertView alloc] initWithTitle:@"Error"
-                                             message:@"Debes de llenar todos los campos"
+                                             message:@"Alguno de los campos no esta llenado"
                                             delegate:self
                                    cancelButtonTitle:@"Ok"
                                    otherButtonTitles:nil];
         [message show];
+        
     }
 }
 
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
-            break;
-        case MFMailComposeResultSent:{
-            NSLog(@"Mail sent");
-            UIAlertView *message;
-            message = [[UIAlertView alloc] initWithTitle:@"Exito"
-                                                 message:@"El Correo se ha enviado exitosamente"
-                                                delegate:self
-                                       cancelButtonTitle:@"Ok"
-                                       otherButtonTitles:nil];
-            [message show];
-            break;}
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-            break;
-        default:
-            break;
-    }
-    
-    // Close the Mail Interface
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 - (IBAction)reposicionarTelefono:(id)sender {
     self.scrollViewContenido.contentOffset = CGPointMake(0,50);
 }
+
+- (void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if ([alertView.title isEqualToString:@"Exito"]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+
 
 
 @end

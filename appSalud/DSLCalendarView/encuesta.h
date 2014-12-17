@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy)NSString *idEncuesta;
 @property (nonatomic, copy)NSString *nombre;
-@property (nonatomic, assign) NSArray *arrayPreguntas;
+@property (nonatomic, copy) NSArray *arrayPreguntas;
+@property (nonatomic, copy) NSData *arrayData;
 
 @end

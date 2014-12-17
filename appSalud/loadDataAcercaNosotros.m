@@ -51,8 +51,9 @@
 //    
 //    [parser parse];
     
+    NSString *path = @"http://192.168.1.159:8888/ConfigAppiOS/obtenAcercaGaleria.php";
     
-    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenAcercaGaleria.php";
+//    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenAcercaGaleria.php";
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [NSURL URLWithString:path ];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];

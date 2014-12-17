@@ -15,6 +15,7 @@
     NSXMLParser *parser;
     NSString *stringBuffer;
     NSString *stringTemp;
+    
 //    NSMutableArray *arrayVacanteServicio;
     
     encuesta *tempEncuesta;
@@ -28,7 +29,7 @@
 
 - (void)parseXML{
     
-    NSString *path = @"http://localhost:8888/ConfigAppiOS/obtenEncuestas.php";
+    NSString *path = @"http://192.168.1.159:8888/ConfigAppiOS/obtenEncuestas.php";
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [NSURL URLWithString:path ];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
@@ -70,8 +71,9 @@
     if ([elementName isEqualToString:@"idencuesta"]) {
         
         if ([tempArrayPreguntas count]>=1) {
-            tempEncuesta.arrayPreguntas = [NSArray arrayWithArray:tempArrayPreguntas];
+            tempEncuesta.arrayData = [NSKeyedArchiver archivedDataWithRootObject:tempArrayPreguntas];
             [self.arrayEncuestas addObject:tempEncuesta];
+            tempArrayPreguntas = [[NSMutableArray alloc] init];
             tempEncuesta = [[encuesta alloc] init];
         }
         
@@ -86,8 +88,20 @@
         stringBuffer=@"";
     }
     
+    else if ([elementName isEqualToString:@"idpregunta"]) {
+        stringTemp=@"";
+        stringBuffer=@"";
+    }
+    
     else if ([elementName isEqualToString:@"pregunta"]) {
         [tempArrayPreguntas addObject:stringBuffer];
+        tempEncuesta.arrayPreguntas = [NSArray arrayWithArray:tempArrayPreguntas];
+        stringTemp=@"";
+        stringBuffer=@"";
+
+    }
+    
+    else if ([elementName isEqualToString:@"tipo"]){
         stringTemp=@"";
         stringBuffer=@"";
     }

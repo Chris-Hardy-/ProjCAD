@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="iso8859-1"?>
 <eventos>
     <evento>
         <titulo>Informe Gov</titulo>
@@ -16,12 +15,12 @@
         <fecha>2014-09-11 11:59</fecha>
     </evento>
     <evento>
-        <titulo>Mensaje Navideño</titulo>
+        <titulo>Mensaje Navidad</titulo>
         <descripcion>Mensaje del Secretario</descripcion>
         <fecha>2014-12-24 22:00</fecha>
     </evento>
     <evento>
-        <titulo>Mensaje Año Nuevo</titulo>
+        <titulo>Mensaje fin de Anio</titulo>
         <descripcion>Mensaje del Secretario</descripcion>
         <fecha>2014-12-31 23:59</fecha>
     </evento>

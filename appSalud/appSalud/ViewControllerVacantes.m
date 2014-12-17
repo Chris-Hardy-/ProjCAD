@@ -150,7 +150,9 @@
         self.editPeriodoLugar.text = muestraVacanteServicio.periodoFin;
         self.editHabilidadesSueldo.text = muestraVacanteServicio.habilidades;
         self.botonAplicar.hidden = false;
-        [userDefaults setObject:muestraVacanteServicio.nombreServicioSocial forKey:@"nombreVacanteAplicacion"];
+        NSData *tempData = [NSKeyedArchiver archivedDataWithRootObject:muestraVacanteServicio];
+        [userDefaults setObject:tempData forKey:@"VacanteAplicacion"];
+        [userDefaults setObject:@"SS" forKey:@"tipoVacante"];
     }
     else if (self.botonOfertLab.selected) {
         muestraVacante = [arrayVacantes objectAtIndex:indexPath.row];
@@ -160,7 +162,9 @@
         self.editPeriodoLugar.text = muestraVacante.lugar;
         self.editHabilidadesSueldo.text = muestraVacante.sueldo;
         self.botonAplicar.hidden = false;
-        [userDefaults setObject:muestraVacante.nombreBolsaTrabajo forKey:@"nombreVacanteAplicacion"];
+        NSData *tempData = [NSKeyedArchiver archivedDataWithRootObject:muestraVacante];
+        [userDefaults setObject:tempData forKey:@"VacanteAplicacion"];
+        [userDefaults setObject:@"VL" forKey:@"tipoVacante"];
     }
     
     self.tablaVacantes.hidden = true;
@@ -210,6 +214,7 @@
 
 }
 - (IBAction)botonAplicar:(id)sender {
+    [self performSegueWithIdentifier:@"aplicarVacante" sender:self];
 }
 
 @end

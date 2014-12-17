@@ -10,6 +10,7 @@
 
 @interface vacante : NSObject <NSCoding>
 @property (nonatomic, copy)NSString *nombreBolsaTrabajo;
+@property (nonatomic, copy)NSString *idBolsaTrabajo;
 @property (nonatomic, copy)NSString *fecPublicacion;
 @property (nonatomic, copy)NSString *lugar;
 @property (nonatomic, copy)NSString *sueldo;

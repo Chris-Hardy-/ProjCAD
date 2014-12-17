@@ -62,11 +62,15 @@
     arrayEstacionales = [NSKeyedUnarchiver unarchiveObjectWithData:arrayData];
     
     
+    
+    
     //NSArray *arrayNutricionales= [[NSArray alloc] initWithObjects:@"Indica1",@"Indica2",@"Indica3", nil];
    // NSArray *arrayEstacionales = [[NSArray alloc] initWithObjects:@"Esta1", @"Estacional2", @"Estacional3", nil];
     
     
     self.myPicker.delegate = self;
+    
+    self.myLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     
     
     
@@ -77,7 +81,8 @@
         self.arrayConsejos=arrayEstacionales;
         self.title = @"Consejos Estacionales";
     }
-    else
+    
+    else if ([[userDefaults objectForKey:@"muestraConsejo"] isEqualToString:@"Nutricionales"])
     {
         self.arrayConsejos = arrayNutricionales;
         self.title = @"Consejos Nutricionales";

@@ -10,6 +10,7 @@
 #import "ViewControllerCalendario.h"
 #import "SWRevealViewController.h"
 #import "evento.h"
+#import <EventKit/EventKit.h>
 
 @interface ViewControllerCalendario () <DSLCalendarViewDelegate>{
     NSArray *tableData;
@@ -37,7 +38,7 @@
                                    initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = flipButton;
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     
     
     self.calendarView.delegate = self;
@@ -52,26 +53,26 @@
     
     
     
-
-//    NSDateComponents *startDate = [[NSDateComponents alloc] init];
-//    NSDateComponents *endDate = [[NSDateComponents alloc] init];
-//    
-//    startDate.year=2014;
-//    startDate.month=12;
-//    startDate.day=12;
-//    
-//    endDate.year=2014;
-//    endDate.month=12;
-//    endDate.day=13;
     
-//    NSString *dateString = @"03-Sep-11";
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    dateFormatter.dateFormat = @"dd-MMM-yy";
-//    NSDate *date = [dateFormatter dateFromString:dateString];
-//    
-//    DSLCalendarRange *selected = [[DSLCalendarRange alloc] initWithStartDay:date endDay:date];
-//    
-//    [self.calendarView setSelectedRange: selected];
+    //    NSDateComponents *startDate = [[NSDateComponents alloc] init];
+    //    NSDateComponents *endDate = [[NSDateComponents alloc] init];
+    //
+    //    startDate.year=2014;
+    //    startDate.month=12;
+    //    startDate.day=12;
+    //
+    //    endDate.year=2014;
+    //    endDate.month=12;
+    //    endDate.day=13;
+    
+    //    NSString *dateString = @"03-Sep-11";
+    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //    dateFormatter.dateFormat = @"dd-MMM-yy";
+    //    NSDate *date = [dateFormatter dateFromString:dateString];
+    //
+    //    DSLCalendarRange *selected = [[DSLCalendarRange alloc] initWithStartDay:date endDay:date];
+    //
+    //    [self.calendarView setSelectedRange: selected];
 }
 
 - (void)viewDidUnload
@@ -152,40 +153,59 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"celdaEventos"];
     }
-        cell.textLabel.text = tempEvento.titulo;
+    cell.textLabel.text = tempEvento.titulo;
     cell.detailTextLabel.text = tempEvento.descripcion;
     
-        return cell;
+    return cell;
     
     return nil;
     
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (self.botonServSoc.selected) {
-//        muestraVacanteServicio = [arrayVacantesServicio objectAtIndex:indexPath.row];
-//        self.editTitulo.text = muestraVacanteServicio.nombreServicioSocial;
-//        self.editPerfil.text = muestraVacanteServicio.perfil;
-//        self.editPublicacionInicio.text = muestraVacanteServicio.periodoInicio;
-//        self.editPeriodoLugar.text = muestraVacanteServicio.periodoFin;
-//        self.editHabilidadesSueldo.text = muestraVacanteServicio.habilidades;
-//        self.botonAplicar.hidden = false;
-//        [userDefaults setObject:muestraVacanteServicio.nombreServicioSocial forKey:@"nombreVacanteAplicacion"];
-//    }
-//    else if (self.botonOfertLab.selected) {
-//        muestraVacante = [arrayVacantes objectAtIndex:indexPath.row];
-//        self.editTitulo.text = muestraVacante.nombreBolsaTrabajo;
-//        self.editPerfil.text = muestraVacante.perfil;
-//        self.editPublicacionInicio.text = muestraVacante.fecPublicacion;
-//        self.editPeriodoLugar.text = muestraVacante.lugar;
-//        self.editHabilidadesSueldo.text = muestraVacante.sueldo;
-//        self.botonAplicar.hidden = false;
-//        [userDefaults setObject:muestraVacante.nombreBolsaTrabajo forKey:@"nombreVacanteAplicacion"];
-//    }
-//    
-//    self.tablaVacantes.hidden = true;
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    tempEvento = [tableData objectAtIndex:indexPath.row];
+    
+    NSDateFormatter *dateFormatter;
+    NSDate *capturedStartDate;
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:6]];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"es_ES"]];
+    
+    capturedStartDate = [dateFormatter dateFromString:tempEvento.fecha];
+    NSLog(@"Captured Date %@", [capturedStartDate description]);
+    
+    
+    EKEventStore *store = [[EKEventStore alloc] init];
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        if (!granted) { return; }
+        EKEvent *event = [EKEvent eventWithEventStore:store];
+        event.title = tempEvento.titulo;
+        event.startDate = capturedStartDate; //today
+        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+        [event setCalendar:[store defaultCalendarForNewEvents]];
+        NSError *err = nil;
+        [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+    }];
+    
+
+    
+//    comps = [cal components:(NSYearCalendarUnit  | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:tempEvento.fecha];
+    
+    [self showCalendarOnDate:capturedStartDate];
+    
+//    [self showCalendarOnDate:[cal dateFromComponents:comps]];
+}
+
+- (void)showCalendarOnDate:(NSDate *)date
+{
+    // calc time interval since 1 January 2001, GMT
+    NSInteger interval = [date timeIntervalSinceReferenceDate];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"calshow:%ld", (long)interval]];
+    [[UIApplication sharedApplication] openURL:url];
+}
 
 
 

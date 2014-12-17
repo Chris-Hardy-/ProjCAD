@@ -26,6 +26,8 @@
     
 }
 
+@synthesize TablaNoticias,TablaIndices;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,11 +84,16 @@
                                    initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = flipButton;
     
+    self.TablaNoticias.delegate = self;
+    self.TablaIndices.delegate = self;
+    self.TablaIndices.dataSource = self;
+    self.TablaNoticias.dataSource = self;
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
-    self.TablaIndices.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
-    self.TablaNoticias.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     self.editBoton.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     
+    TablaIndices.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
+    TablaNoticias.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -182,11 +189,11 @@
 
 
 - (IBAction)mostrarNutricionales:(id)sender {
-    [userDefaults setObject:@"nutricionales" forKey:@"muestraConsejo"];
+    [userDefaults setObject:@"Nutricionales" forKey:@"muestraConsejo"];
 }
 
 - (IBAction)mostrarEstacionales:(id)sender {
-    [userDefaults setObject:@"estacionales" forKey:@"muestraConsejo"];
+    [userDefaults setObject:@"Estacionales" forKey:@"muestraConsejo"];
 }
 
 @end
