@@ -43,6 +43,7 @@
 		3C3DF99F1A3F67D5001A9AF3 /* evento.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3DF99E1A3F67D5001A9AF3 /* evento.m */; };
 		3C42CE9B19BBA583006CEC9A /* ViewControllerMensaje.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C42CE9A19BBA583006CEC9A /* ViewControllerMensaje.m */; };
 		3C42CE9D19BBAC2B006CEC9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C42CE9C19BBAC2B006CEC9A /* MapKit.framework */; };
+		3C42FE181A4177A900D1C04E /* loadDataUpdates.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C42FE171A4177A900D1C04E /* loadDataUpdates.m */; };
 		3C48E59E19A39F1A0044038B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C48E59D19A39F1A0044038B /* Foundation.framework */; };
 		3C48E5A019A39F1A0044038B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C48E59F19A39F1A0044038B /* CoreGraphics.framework */; };
 		3C48E5A219A39F1A0044038B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C48E5A119A39F1A0044038B /* UIKit.framework */; };
@@ -75,7 +76,6 @@
 		3C8BCA871A40DEFD00E61D64 /* ViewControllerMuestraConsejosDirijo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BCA861A40DEFD00E61D64 /* ViewControllerMuestraConsejosDirijo.m */; };
 		3C8BCA8A1A41445400E61D64 /* ViewControllerEncuestas.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BCA891A41445400E61D64 /* ViewControllerEncuestas.m */; };
 		3C9716A91A264BDF0065775A /* ViewControllerADondeMeDirijo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9716A81A264BDF0065775A /* ViewControllerADondeMeDirijo.m */; };
-		3CB81C3D1A02905A00AB7E58 /* loadDataActualizar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB81C3C1A02905A00AB7E58 /* loadDataActualizar.m */; };
 		3CB81C401A02995100AB7E58 /* launchImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C3E1A02995100AB7E58 /* launchImage2.png */; };
 		3CB81C411A02995100AB7E58 /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C3F1A02995100AB7E58 /* launchImage.png */; };
 		3CB81C451A029B4200AB7E58 /* backgroundTexture111.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB81C441A029B4200AB7E58 /* backgroundTexture111.png */; };
@@ -175,6 +175,8 @@
 		3C42CE9919BBA583006CEC9A /* ViewControllerMensaje.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMensaje.h; sourceTree = "<group>"; };
 		3C42CE9A19BBA583006CEC9A /* ViewControllerMensaje.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMensaje.m; sourceTree = "<group>"; };
 		3C42CE9C19BBAC2B006CEC9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3C42FE161A4177A900D1C04E /* loadDataUpdates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadDataUpdates.h; path = DSLCalendarView/loadDataUpdates.h; sourceTree = "<group>"; };
+		3C42FE171A4177A900D1C04E /* loadDataUpdates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadDataUpdates.m; path = DSLCalendarView/loadDataUpdates.m; sourceTree = "<group>"; };
 		3C48E59A19A39F1A0044038B /* appSalud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appSalud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C48E59D19A39F1A0044038B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C48E59F19A39F1A0044038B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,8 +226,6 @@
 		3C8BCA891A41445400E61D64 /* ViewControllerEncuestas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerEncuestas.m; path = ../ViewControllerEncuestas.m; sourceTree = "<group>"; };
 		3C9716A71A264BDF0065775A /* ViewControllerADondeMeDirijo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerADondeMeDirijo.h; path = ../ViewControllerADondeMeDirijo.h; sourceTree = "<group>"; };
 		3C9716A81A264BDF0065775A /* ViewControllerADondeMeDirijo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerADondeMeDirijo.m; path = ../ViewControllerADondeMeDirijo.m; sourceTree = "<group>"; };
-		3CB81C3B1A02905A00AB7E58 /* loadDataActualizar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadDataActualizar.h; sourceTree = "<group>"; };
-		3CB81C3C1A02905A00AB7E58 /* loadDataActualizar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadDataActualizar.m; sourceTree = "<group>"; };
 		3CB81C3E1A02995100AB7E58 /* launchImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage2.png; sourceTree = "<group>"; };
 		3CB81C3F1A02995100AB7E58 /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
 		3CB81C441A029B4200AB7E58 /* backgroundTexture111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTexture111.png; sourceTree = "<group>"; };
@@ -452,14 +452,14 @@
 				3CD5704219F6AA6200A82125 /* DSLCalendarView */,
 				3C48E5E019A3D5960044038B /* SWRevealViewController.h */,
 				3C48E5E119A3D5960044038B /* SWRevealViewController.m */,
+				3C42FE161A4177A900D1C04E /* loadDataUpdates.h */,
+				3C42FE171A4177A900D1C04E /* loadDataUpdates.m */,
 				3C8B286419AF8EB200F632BF /* loadDataAcercaNosotros.h */,
 				3C8B286519AF8EB200F632BF /* loadDataAcercaNosotros.m */,
 				3CCB011919BF63BE002FB971 /* loadDataNoticias.h */,
 				3CCB011A19BF63BE002FB971 /* loadDataNoticias.m */,
 				3C25CEEC19F958EC004F5AA0 /* loadDataSucursales.h */,
 				3C25CEED19F958EC004F5AA0 /* loadDataSucursales.m */,
-				3CB81C3B1A02905A00AB7E58 /* loadDataActualizar.h */,
-				3CB81C3C1A02905A00AB7E58 /* loadDataActualizar.m */,
 				26FDC4E21A29007600A8EF6A /* loadDataVacantes.h */,
 				26FDC4E31A29007600A8EF6A /* loadDataVacantes.m */,
 				26FDC4EB1A291C5200A8EF6A /* loadDataVacanteServicio.h */,
@@ -685,6 +685,7 @@
 				3C48E5AA19A39F1A0044038B /* main.m in Sources */,
 				3CD5706819F6AA6200A82125 /* DSLCalendarRange.m in Sources */,
 				3CD5706919F6AA6200A82125 /* DSLCalendarView.m in Sources */,
+				3C42FE181A4177A900D1C04E /* loadDataUpdates.m in Sources */,
 				3C42CE9B19BBA583006CEC9A /* ViewControllerMensaje.m in Sources */,
 				3CCB011E19BF6852002FB971 /* noticia.m in Sources */,
 				3CCB012119BF72F9002FB971 /* indice_consejo.m in Sources */,
@@ -716,7 +717,6 @@
 				3CD5706219F6AA6200A82125 /* DSLCalendarDayCalloutView.m in Sources */,
 				265C826F1A267CA3004D856A /* ViewControllerContactanos.m in Sources */,
 				3C526E1D1A3F2EBF00A163CB /* encuesta.m in Sources */,
-				3CB81C3D1A02905A00AB7E58 /* loadDataActualizar.m in Sources */,
 				3C8B286E19AFB6FA00F632BF /* mensaje.m in Sources */,
 				3C358C0D1A24F86B009108CC /* CalloutMapAnnotationView.m in Sources */,
 				265C82691A267922004D856A /* ViewControllerVacantes.m in Sources */,

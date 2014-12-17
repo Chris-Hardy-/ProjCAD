@@ -18,6 +18,7 @@
 #import "loadDataVacanteServicio.h"
 #import "loadDataEncuestas.h"
 #import "loadDataCalendario.h"
+#import "loadDataUpdates.h"
 
 @implementation AppDelegate{
     NSUserDefaults *userDefaults;
@@ -48,9 +49,83 @@
                                                            [UIColor colorWithRed:10.0/255.0 green:10.0/255.0 blue:10.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"Helvetica-Light" size:21.0], NSFontAttributeName, nil]];
-    [self cargaInicial];
     
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:114 green:161 blue:54 alpha:1]];
+    //    loadDataUpdates *loaderUpdates = [[loadDataUpdates alloc] init];
+    //    [loaderUpdates cargaInicial];
+    //
+    //    arrayData = [userDefaults objectForKey:@"arrayUpdates"];
+    //    someArray = [NSKeyedUnarchiver unarchiveObjectWithData:arrayData];
+    //
+    //    if(someArray){
+    //        arrayData = [userDefaults objectForKey:@"arrayUpdates"];
+    //        arrayTemp = [NSKeyedUnarchiver unarchiveObjectWithData:arrayData];
+    //
+    //        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    //        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    //        NSDate *dateArray = [formatter dateFromString:[arrayTemp objectAtIndex:0]];
+    //        NSDate *datefromXML = [formatter dateFromString:loaderUpdates.acercaNosotros];
+    //
+    //        NSDate *date1 = dateArray;
+    //        NSDate *date2 = datefromXML;
+    //        switch ([date1 compare:date2]) {
+    //            case NSOrderedAscending:
+    //                //Do your logic when date1 > date2
+    //                break;
+    //
+    //            case NSOrderedDescending:
+    //                //Do your logic when date1 < date2
+    //                break;
+    //
+    //            case NSOrderedSame:
+    //                //Do your logic when date1 = date2
+    //                break;
+    //        }
+    //
+    //        [self cargaAcercaNosotros];
+    //        [self cargaCalendario];
+    //        [self cargaEncuestas];
+    //        [self cargaNoticias];
+    //        [self cargaSucursales];
+    //        [self cargaVacantes];
+    //        [self cargaVacantesServicioSocial];
+    //
+    //    }
+    //
+    //    else{
+    //        arrayTemp=[[NSMutableArray alloc] init];
+    //
+    //        [arrayTemp addObject:loaderUpdates.acercaNosotros];
+    //        [arrayTemp addObject:loaderUpdates.sucursales];
+    //        [arrayTemp addObject:loaderUpdates.noticias];
+    //        [arrayTemp addObject:loaderUpdates.serviciosocial];
+    //        [arrayTemp addObject:loaderUpdates.bolsatrabajo];
+    //        [arrayTemp addObject:loaderUpdates.encuestas];
+    //
+    //        someArray = [[NSArray alloc] initWithArray:arrayTemp];
+    //        arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    //        [userDefaults setObject:arrayData forKey:@"arrayUpdates"];
+    //        [arrayTemp removeAllObjects];
+    //
+    //
+    //        [self cargaAcercaNosotros];
+    //        [self cargaCalendario];
+    //        [self cargaEncuestas];
+    //        [self cargaNoticias];
+    //        [self cargaSucursales];
+    //        [self cargaVacantes];
+    //        [self cargaVacantesServicioSocial];
+    //
+    //    }
+    
+    [self cargaAcercaNosotros];
+    [self cargaCalendario];
+    [self cargaEncuestas];
+    [self cargaNoticias];
+    [self cargaSucursales];
+    [self cargaVacantes];
+    [self cargaVacantesServicioSocial];
+    
+    //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:114 green:161 blue:54 alpha:1]];
     
     UIColor *selectedColor =[UIColor colorWithRed:114.0/255.0 green:161.0/255.0 blue:54.0/255.0 alpha:1];
     
@@ -59,7 +134,7 @@
     return YES;
     
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -68,7 +143,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -87,17 +162,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)cargaInicial{
+-(void)cargaAcercaNosotros{
     
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    UIImage *imagen;
-//    NSData *imagenData;
-//    NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
-//    mensaje *mensajeTemp;
-//    galeriaImagenes *galeriaTemp;
-//    noticia *noticiaTemp;
-//    NSArray *someArray;
-//    NSData *arrayData;
+    //    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    //    UIImage *imagen;
+    //    NSData *imagenData;
+    //    NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
+    //    mensaje *mensajeTemp;
+    //    galeriaImagenes *galeriaTemp;
+    //    noticia *noticiaTemp;
+    //    NSArray *someArray;
+    //    NSData *arrayData;
     
     
     loadDataAcercaNosotros *loader;
@@ -130,7 +205,9 @@
     arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
     [userDefaults setObject:arrayData forKey:@"arrayGaleria"];
     [arrayTemp removeAllObjects];
-    
+}
+
+-(void)cargaNoticias{
     
     //  CARGA DE XML SECCION NOTICIAS
     
@@ -167,7 +244,9 @@
     arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
     [userDefaults setObject:arrayData forKey:@"arrayConsejosNutricionales"];
     [arrayTemp removeAllObjects];
-    
+}
+
+-(void)cargaSucursales{
     //CARGA DE XML SECCION SUCURSALES
     loadDataSucursales *loaderSucursales = [[loadDataSucursales alloc] init];
     [loaderSucursales cargaInicial];
@@ -176,12 +255,14 @@
     [userDefaults setObject:arrayData forKey:@"arraySucursales"];
     [arrayTemp removeAllObjects];
     
-    //CARGA DE XML VACANTES
-    someArray= [[NSArray alloc] initWithArray:loaderNoticas.arrayConsejosNutricionales];
-    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
-    [userDefaults setObject:arrayData forKey:@"arrayConsejosNutricionales"];
-    [arrayTemp removeAllObjects];
-    
+    //    //CARGA DE XML VACANTES
+    //    someArray= [[NSArray alloc] initWithArray:loaderNoticas.arrayConsejosNutricionales];
+    //    arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
+    //    [userDefaults setObject:arrayData forKey:@"arrayConsejosNutricionales"];
+    //    [arrayTemp removeAllObjects];
+}
+
+-(void)cargaVacantes{
     //CARGA DE XML VACANTES
     loadDataVacantes *loaderVacantes = [[loadDataVacantes alloc] init];
     [loaderVacantes cargaInicial];
@@ -189,7 +270,8 @@
     arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
     [userDefaults setObject:arrayData forKey:@"arrayVacantes"];
     [arrayTemp removeAllObjects];
-    
+}
+-(void)cargaVacantesServicioSocial{
     //CARGA DE XML VACANTES SERVICIO SOCIAL
     loadDataVacanteServicio *loaderVacantesServicio = [[loadDataVacanteServicio alloc] init];
     [loaderVacantesServicio cargaInicial];
@@ -197,6 +279,8 @@
     arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
     [userDefaults setObject:arrayData forKey:@"arrayVacantesServicio"];
     [arrayTemp removeAllObjects];
+}
+-(void)cargaEncuestas{
     
     //CARGA XML ENCUESTAS
     loadDataEncuestas *loaderEncuestas = [[loadDataEncuestas alloc] init];
@@ -205,6 +289,9 @@
     arrayData = [NSKeyedArchiver archivedDataWithRootObject:someArray];
     [userDefaults setObject:arrayData forKey:@"arrayEncuestas"];
     [arrayTemp removeAllObjects];
+}
+
+-(void)cargaCalendario{
     
     //CARGA XML CALENDARIO
     loadDataCalendario *loaderCalendario = [[loadDataCalendario alloc] init];
