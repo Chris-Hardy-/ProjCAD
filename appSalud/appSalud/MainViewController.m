@@ -144,6 +144,7 @@
     }
 }
 - (IBAction)botonGooglePlus:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"gplus://plus.google.com/u/0/105819873801211194735/"]];
 }
 
 - (IBAction)botonSecretariaSalud:(id)sender {

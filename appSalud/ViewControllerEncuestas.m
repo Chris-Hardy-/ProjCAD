@@ -115,6 +115,11 @@
     
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTexture.png"]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 3;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
     return cell;
     
 }
